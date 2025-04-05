@@ -1,9 +1,10 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TestimonialCard from './testimonial-card';
 
 const TestimonialsSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const testimonials = [
     {
@@ -36,20 +37,35 @@ const TestimonialsSection = () => {
     }
   ];
 
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isAutoPlaying) {
+      interval = setInterval(() => {
+        setActiveSlide((prev) => (prev < testimonials.length - 1 ? prev + 1 : 0));
+      }, 5000);
+    }
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, testimonials.length]);
+
   const handlePrevSlide = () => {
+    setIsAutoPlaying(false);
     setActiveSlide((prev) => (prev > 0 ? prev - 1 : testimonials.length - 1));
   };
 
   const handleNextSlide = () => {
+    setIsAutoPlaying(false);
     setActiveSlide((prev) => (prev < testimonials.length - 1 ? prev + 1 : 0));
   };
 
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+        <div className="text-center mb-16">
+          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block">
+            Testimonials
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             What Our Clients Say
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -58,7 +74,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Testimonial Carousel */}
-        <div className="relative testimonial-carousel">
+        <div className="relative testimonial-carousel max-w-6xl mx-auto">
           <div className="overflow-hidden">
             <div 
               className="testimonial-slider flex transition-transform duration-500 ease-in-out"
@@ -81,7 +97,8 @@ const TestimonialsSection = () => {
           {/* Carousel Controls */}
           <button
             onClick={handlePrevSlide}
-            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg -ml-4 z-10 carousel-prev focus:outline-none"
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg -ml-4 z-10 carousel-prev focus:outline-none hover:bg-gray-50 transition-colors duration-200"
+            aria-label="Previous testimonial"
           >
             <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
@@ -89,7 +106,8 @@ const TestimonialsSection = () => {
           </button>
           <button
             onClick={handleNextSlide}
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg -mr-4 z-10 carousel-next focus:outline-none"
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg -mr-4 z-10 carousel-next focus:outline-none hover:bg-gray-50 transition-colors duration-200"
+            aria-label="Next testimonial"
           >
             <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -97,26 +115,33 @@ const TestimonialsSection = () => {
           </button>
 
           {/* Carousel Indicators */}
-          <div className="flex justify-center mt-8 carousel-indicators">
+          <div className="flex justify-center mt-10 carousel-indicators">
             {testimonials.map((_, index) => (
               <button 
                 key={index}
-                className={`h-3 w-12 mx-1 rounded-full ${
-                  index === activeSlide ? 'bg-blue-600' : 'bg-gray-300'
+                className={`h-2 w-8 mx-1 rounded-full transition-all duration-300 ${
+                  index === activeSlide ? 'bg-blue-600 w-12' : 'bg-gray-300 hover:bg-gray-400'
                 }`}
-                onClick={() => setActiveSlide(index)}
+                onClick={() => {
+                  setIsAutoPlaying(false);
+                  setActiveSlide(index);
+                }}
+                aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
           </div>
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <a 
             href="#contact"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-full transition duration-300"
+            className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
             Become Our Next Success Story
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
           </a>
         </div>
       </div>

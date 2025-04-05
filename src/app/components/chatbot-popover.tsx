@@ -1,14 +1,14 @@
+"use client";
 import React from "react";
-
 
 const ChatBotPopoverComponent = () => {
   return (
     <div className="fixed bottom-8 right-8 z-50" id="el-su3ibn8g">
       <button
         id="chatbot-trigger"
-        className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition duration-300"
+        className="group flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-full shadow-lg transition-all duration-300 overflow-hidden w-12 hover:w-36"
       >
-        <div className="relative" id="el-vl4agta4">
+        <div className="relative flex-shrink-0" id="el-vl4agta4">
           <img
             src="https://placehold.co/40x40?text=AI"
             alt="AI Assistant"
@@ -22,7 +22,12 @@ const ChatBotPopoverComponent = () => {
             id="el-jputjjjd"
           ></span>
         </div>
-        <span className="ml-2 font-medium" id="el-617ozom3">
+
+        {/* Reveal text on hover */}
+        <span
+          className="ml-2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          id="el-617ozom3"
+        >
           Chat with us
         </span>
       </button>

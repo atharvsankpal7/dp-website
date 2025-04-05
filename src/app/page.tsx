@@ -9,15 +9,18 @@ import FooterComponent from "./components/footer";
 
 export default function Home() {
   const navItems = [
-    { label: "Home", href: "#home" },
+    { label: "Home", href: "#" },
     { label: "Services", href: "#services" },
     { label: "About", href: "#about" },
+    { label: "Blog", href: "/blog" },
     {
       label: "Get Started",
       href: "#contact",
       type: "primary" as const,
     },
   ];
+
+  
   return (
     <>
       <Header navItems={navItems} />
