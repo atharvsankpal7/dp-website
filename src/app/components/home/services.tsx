@@ -87,7 +87,7 @@ const ServicesSection: React.FC = () => {
         </div>
 
         {/* CTA Banner */}
-        <div className="mt-20 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-10 md:p-12 shadow-soft hover-lift transition-all duration-300">
+        {/* <div className="mt-20 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-10 md:p-12 shadow-soft hover-lift transition-all duration-300">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
@@ -106,7 +106,7 @@ const ServicesSection: React.FC = () => {
               </span>
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
