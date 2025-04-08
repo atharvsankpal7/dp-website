@@ -64,7 +64,7 @@ const Header: React.FC<HeaderProps> = ({
                     className={`
                       ${item.type === 'primary' 
                         ? 'btn-primary' 
-                        : 'text-gray-600 hover:text-primary transition-colors duration-200'}
+                        : 'text-gray-600 hover:text-blue-500 transition-colors duration-200'}
                     `}
                   >
                     {item.label}
@@ -121,7 +121,7 @@ const Header: React.FC<HeaderProps> = ({
                       block px-4 py-2 
                       ${item.type === 'primary' 
                         ? 'btn-primary text-center' 
-                        : 'text-gray-600 hover:text-primary transition-colors duration-200'}
+                        : 'text-gray-600 hover:text-blue-500 transition-colors duration-200'}
                     `}
                   >
                     {item.label}

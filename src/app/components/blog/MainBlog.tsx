@@ -10,7 +10,7 @@ export default function BlogPage() {
     return (
         <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white" id="blog">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-purple-900 to-purple-700 text-white py-20">
+            <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
                 <div className="absolute inset-0 opacity-10">
                     <Image
                         src="/placeholder.svg?height=600&width=1920"
@@ -23,19 +23,19 @@ export default function BlogPage() {
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-3xl mx-auto text-center">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">Insights & Strategies for Digital Growth</h1>
-                        <p className="text-xl text-purple-100 mb-8">
+                        <p className="text-xl text-blue-100 mb-8">
                             Expert advice, industry trends, and actionable tips to elevate your digital marketing performance
                         </p>
 
                         {/* Search Bar */}
                         <div className="relative max-w-xl mx-auto">
-                            <div className="flex items-center bg-white/10 backdrop-blur-sm border border-purple-300/30 rounded-full overflow-hidden">
+                            <div className="flex items-center bg-white/10 backdrop-blur-sm border border-blue-300/30 rounded-full overflow-hidden">
                                 <input
                                     type="text"
                                     placeholder="Search for insights..."
-                                    className="w-full py-4 px-6 bg-transparent text-white placeholder-purple-200 outline-none"
+                                    className="w-full py-4 px-6 bg-transparent text-white placeholder-blue-200 outline-none"
                                 />
-                                <button className="bg-white text-purple-700 p-4 rounded-full mr-1">
+                                <button className="bg-white text-blue-700 p-4 rounded-full mr-1">
                                     <Search className="h-5 w-5" />
                                 </button>
                             </div>
@@ -61,7 +61,7 @@ export default function BlogPage() {
                                 <h2 className="text-2xl font-bold text-gray-900">Latest Insights</h2>
                                 <Link
                                     href="/blog/all"
-                                    className="text-purple-600 hover:text-purple-700 flex items-center gap-1 font-medium"
+                                    className="text-blue-600 hover:text-blue-700 flex items-center gap-1 font-medium"
                                 >
                                     View all <ArrowRight className="h-4 w-4" />
                                 </Link>
@@ -77,7 +77,7 @@ export default function BlogPage() {
                                             fill
                                             className="object-cover"
                                         />
-                                        <div className="absolute top-4 left-4 bg-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                        <div className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
                                             SEO
                                         </div>
                                     </div>
@@ -88,7 +88,7 @@ export default function BlogPage() {
                                             <span>8 min read</span>
                                         </div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-3">
-                                            <Link href="/blog/10-seo-strategies-for-2025" className="hover:text-purple-600 transition-colors">
+                                            <Link href="/blog/10-seo-strategies-for-2025" className="hover:text-blue-600 transition-colors">
                                                 10 SEO Strategies That Will Dominate in 2025
                                             </Link>
                                         </h3>
@@ -129,7 +129,7 @@ export default function BlogPage() {
                                             <span>6 min read</span>
                                         </div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-3">
-                                            <Link href="/blog/measuring-social-media-roi" className="hover:text-purple-600 transition-colors">
+                                            <Link href="/blog/measuring-social-media-roi" className="hover:text-blue-600 transition-colors">
                                                 Measuring Social Media ROI: Beyond Likes and Shares
                                             </Link>
                                         </h3>
@@ -170,7 +170,7 @@ export default function BlogPage() {
                                             <span>5 min read</span>
                                         </div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-3">
-                                            <Link href="/blog/email-automation-workflows" className="hover:text-purple-600 transition-colors">
+                                            <Link href="/blog/email-automation-workflows" className="hover:text-blue-600 transition-colors">
                                                 7 Email Automation Workflows That Convert Leads to Customers
                                             </Link>
                                         </h3>
@@ -211,7 +211,7 @@ export default function BlogPage() {
                                             <span>7 min read</span>
                                         </div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-3">
-                                            <Link href="/blog/ppc-campaign-optimization" className="hover:text-purple-600 transition-colors">
+                                            <Link href="/blog/ppc-campaign-optimization" className="hover:text-blue-600 transition-colors">
                                                 PPC Campaign Optimization: Reducing Cost While Maximizing Conversions
                                             </Link>
                                         </h3>
@@ -234,7 +234,7 @@ export default function BlogPage() {
 
                             {/* Load More Button */}
                             <div className="mt-10 text-center">
-                                <button className="bg-white border border-purple-600 text-purple-600 hover:bg-purple-50 font-medium px-8 py-3 rounded-full transition-colors duration-300">
+                                <button className="bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 font-medium px-8 py-3 rounded-full transition-colors duration-300">
                                     Load More Articles
                                 </button>
                             </div>
@@ -252,7 +252,7 @@ export default function BlogPage() {
                         {/* Trending Topics */}
                         <div className="bg-white rounded-xl shadow-md p-6 mt-8">
                             <div className="flex items-center gap-2 mb-6">
-                                <TrendingUp className="h-5 w-5 text-purple-600" />
+                                <TrendingUp className="h-5 w-5 text-blue-600" />
                                 <h3 className="text-xl font-bold text-gray-900">Trending Topics</h3>
                             </div>
                             <div className="flex flex-wrap gap-2">
@@ -308,15 +308,15 @@ export default function BlogPage() {
                         </div>
 
                         {/* CTA Banner */}
-                        <div className="mt-8 bg-gradient-to-r from-purple-700 to-purple-900 rounded-xl shadow-md overflow-hidden">
+                        <div className="mt-8 bg-gradient-to-r from-blue-700 to-blue-900 rounded-xl shadow-md overflow-hidden">
                             <div className="p-8 text-white">
                                 <h3 className="text-xl font-bold mb-3">Ready to Boost Your Digital Performance?</h3>
-                                <p className="mb-6 text-purple-100">
+                                <p className="mb-6 text-blue-100">
                                     Our experts will analyze your current strategy and provide actionable recommendations.
                                 </p>
                                 <Link
                                     href="/contact"
-                                    className="inline-block bg-white text-purple-700 hover:bg-gray-100 font-medium px-6 py-3 rounded-full transition-colors duration-300"
+                                    className="inline-block bg-white text-blue-700 hover:bg-gray-100 font-medium px-6 py-3 rounded-full transition-colors duration-300"
                                 >
                                     Get a Free Consultation
                                 </Link>

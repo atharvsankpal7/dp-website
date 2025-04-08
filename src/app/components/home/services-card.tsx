@@ -18,12 +18,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   return (
     <div
       className={`bg-white rounded-xl p-6 shadow-soft hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-t-4 ${
-        accentColor === 'primary' ? 'border-primary' : 'border-secondary'
+        accentColor === 'primary' ? 'border-blue-600' : 'border-blue-400'
       }`}
     >
       <div className="flex items-center mb-4">
         <div className={`p-3 rounded-lg ${
-          accentColor === 'primary' ? 'bg-primary/10' : 'bg-secondary/10'
+          accentColor === 'primary' ? 'bg-blue-600/10' : 'bg-blue-800/10'
         }`}>
           {icon}
         </div>
@@ -35,7 +35,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           {services.map((service, index) => (
             <li key={index} className="flex items-center text-sm text-gray-600">
               <span className={`w-1.5 h-1.5 rounded-full mr-2 ${
-                accentColor === 'primary' ? 'bg-primary' : 'bg-secondary'
+                accentColor === 'primary' ? 'bg-blue-500' : 'bg-blue-700'
               }`} />
               {service}
             </li>

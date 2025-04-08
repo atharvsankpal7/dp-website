@@ -33,7 +33,7 @@ export default function BlogCategoryTabs() {
                                     setActiveCategory(category.id)
                                 }}
                                 className={`flex items-center whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium transition-colors ${activeCategory === category.id
-                                        ? "bg-purple-600 text-white"
+                                        ? "bg-blue-600 text-white"
                                         : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                                     }`}
                             >
