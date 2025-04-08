@@ -1,43 +1,40 @@
-import React from "react";
-import { ClientLogo } from "./client-logo";
-import StatisticCard from "./client/metrices";
-import SuccessStoryCard from "./client/success-story";
+"use client"
 
-interface Props {}
+import { useEffect, useRef } from "react"
+import { ClientLogo } from "./client-logo"
+import StatisticCard from "./client/metrices"
+import SuccessStoryCard from "./client/success-story"
+
+type Props = {}
 
 const OurClientComponents = () => {
   const clientLogos = [
     {
       id: "el-pcfjrb5l",
-      src: "https://placehold.co/120x60?text=Client Logo 1",
+      src: "/logo1.png",
       alt: "Client Company Logo 1",
     },
     {
       id: "el-chxvdpts",
-      src: "https://placehold.co/120x60?text=Client Logo 2",
+      src: "/logo2.png",
       alt: "Client Company Logo 2",
     },
     {
       id: "el-gkcaw5fq",
-      src: "https://placehold.co/120x60?text=Client Logo 3",
+      src: "/logo3.png",
       alt: "Client Company Logo 3",
     },
     {
       id: "el-m7nq2t1e",
-      src: "https://placehold.co/120x60?text=Client Logo 4",
+      src: "/logo4.png",
       alt: "Client Company Logo 4",
     },
     {
       id: "el-y07kt2po",
-      src: "https://placehold.co/120x60?text=Client Logo 5",
+      src: "/logo5.png",
       alt: "Client Company Logo 5",
     },
-    {
-      id: "el-14eab2hz",
-      src: "https://placehold.co/120x60?text=Client Logo 6",
-      alt: "Client Company Logo 6",
-    },
-  ];
+  ]
 
   // SVG Icons
   const HappyClientsIcon = () => (
@@ -55,7 +52,7 @@ const OurClientComponents = () => {
         d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
       />
     </svg>
-  );
+  )
 
   const CampaignsIcon = () => (
     <svg
@@ -72,7 +69,7 @@ const OurClientComponents = () => {
         d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
       />
     </svg>
-  );
+  )
 
   const ROIIcon = () => (
     <svg
@@ -89,7 +86,7 @@ const OurClientComponents = () => {
         d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
       />
     </svg>
-  );
+  )
 
   const statisticsData = [
     {
@@ -97,8 +94,7 @@ const OurClientComponents = () => {
       number: 500,
       numberSuffix: "+",
       title: "Happy Clients",
-      description:
-        "Businesses achieving their digital marketing goals with our strategies.",
+      description: "Businesses achieving their digital marketing goals with our strategies.",
       bgColor: "bg-blue-50",
       textColor: "text-blue-600",
     },
@@ -120,57 +116,74 @@ const OurClientComponents = () => {
       bgColor: "bg-green-50",
       textColor: "text-green-600",
     },
-  ];
+  ]
 
   const successStoriesData = [
     {
-      logo: "https://placehold.co/80x80?text=RetailPlus Logo",
-      companyName: "RetailPlus",
+      logo: "/logo2.png",
+      companyName: "Shivjal",
       testimonial:
-        "Increased online sales by 175% in the first quarter after implementing our comprehensive digital strategy.",
-      tags: [
-        { label: "E-commerce", color: "bg-blue-100 text-blue-800" },
-        { label: "Social Media", color: "bg-purple-100 text-purple-800" },
-      ],
+        "This platform has been instrumental in helping us scale our business. The robust features and reliable performance have exceeded our expectations.",
     },
     {
-      logo: "https://placehold.co/80x80?text=GreenTech Logo",
-      companyName: "GreenTech",
+      logo: "/logo5.png",
+      companyName: "Muktai Textile",
       testimonial:
         "Reduced customer acquisition costs by 42% while generating 3x more qualified leads through targeted SEO.",
-      tags: [
-        { label: "SEO", color: "bg-green-100 text-green-800" },
-        { label: "Content", color: "bg-blue-100 text-blue-800" },
-      ],
+      
     },
     {
-      logo: "https://placehold.co/80x80?text=Innovate Inc Logo",
-      companyName: "Innovate Inc",
+      logo: "/logo4.png",
+      companyName: "KMart",
       testimonial:
         "Achieved 230% growth in lead generation through integrated marketing campaigns and content strategy.",
-      tags: [
-        { label: "PPC", color: "bg-orange-100 text-orange-800" },
-        { label: "Email", color: "bg-indigo-100 text-indigo-800" },
-      ],
     },
-  ];
+  ]
+
+  // Create refs for the logo carousel
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current
+    if (!scrollContainer) return
+
+    let animationFrameId: number | null = null
+    let scrollPosition = 0
+    const scrollSpeed = 0.5 // Adjust for faster/slower scrolling
+
+    const animateScroll = () => {
+      if (!scrollContainer) return // Guard in case the ref becomes null
+
+      scrollPosition += scrollSpeed
+      scrollContainer.scrollLeft = scrollPosition
+
+      // If the scroll reaches the end of the duplicated content, reset to the beginning
+      if (scrollPosition >= scrollContainer.scrollWidth / 2) {
+        scrollPosition = 0
+        scrollContainer.scrollLeft = 0
+      }
+
+      animationFrameId = requestAnimationFrame(animateScroll)
+    }
+
+    animationFrameId = requestAnimationFrame(animateScroll)
+
+    return () => {
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId)
+      }
+    }
+  }, [clientLogos])
 
   return (
     <section id="clients" className="py-16 bg-white">
       <div className="container mx-auto px-4" id="el-fuy4npec">
         <div className="text-center mb-16" id="el-lbaq7jft">
-          <h2
-            className="text-3xl md:text-4xl font-bold mb-4 text-gray-900"
-            id="el-bpxkowae"
-          >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900" id="el-bpxkowae">
             Our Happy Clients
           </h2>
-          <p
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
-            id="el-fa16xi3b"
-          >
-            Join hundreds of businesses that have achieved remarkable growth
-            through our digital solutions.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto" id="el-fa16xi3b">
+            Join hundreds of businesses that have achieved remarkable growth through our digital solutions.
           </p>
         </div>
 
@@ -190,9 +203,10 @@ const OurClientComponents = () => {
         </div>
 
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Success Stories
-          </h3>
+
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center" id="el-ybnzq211">
+            <span className="text-gray-500">What Our Clients Say</span>
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {successStoriesData.map((story, index) => (
@@ -201,38 +215,61 @@ const OurClientComponents = () => {
           </div>
         </div>
 
-        <div id="el-tjd3j9c2">
-          <h3
-            className="text-2xl font-bold text-gray-900 mb-8 text-center"
-            id="el-ybnzq211"
-          >
-            Trusted By
-          </h3>
-          <div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8"
-            id="el-ek76osiw"
-          >
-            {clientLogos.map((logo) => (
-              <ClientLogo
-                key={logo.id}
-                id={logo.id}
-                src={logo.src}
-                alt={logo.alt}
-              />
-            ))}
+        <div id="el-tjd3j9c2" className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center" id="el-ybnzq211">
+            <span className="text-gray-500">Satisfied Clients</span>
+          </h2>
+
+          {/* Logo carousel container */}
+          <div className="overflow-hidden relative">
+            <div
+              ref={scrollRef}
+              className="flex items-center space-x-12 py-6 whitespace-nowrap overflow-x-auto scrollbar-hide"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {/* First set of logos */}
+              {clientLogos.map((logo) => (
+                <div key={logo.id} className="flex-shrink-0">
+                  <ClientLogo
+                    id={logo.id}
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="w-24 h-24 rounded-full object-contain border-2 border-gray-100 shadow-sm transition-transform"
+                  />
+                </div>
+              ))}
+              {/* Duplicate logos for continuous scrolling */}
+              {clientLogos.map((logo) => (
+                <div key={`dup-${logo.id}`} className="flex-shrink-0">
+                  <ClientLogo
+                    id={`dup-${logo.id}`}
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="w-24 h-24 rounded-full object-contain border-2 border-gray-100 shadow-sm transition-transform"
+                  />
+                </div>
+              ))}
+              {/* Duplicate logos for continuous scrolling */}
+              {clientLogos.map((logo) => (
+                <div key={`dup-${logo.id}`} className="flex-shrink-0">
+                  <ClientLogo
+                    id={`dup-${logo.id}`}
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="w-24 h-24 rounded-full object-contain border-2 border-gray-100 shadow-sm transition-transform"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="mt-16 text-center" id="el-2rb2hq7b">
-          <h3
-            className="text-2xl font-bold text-gray-900 mb-4"
-            id="el-msghaojl"
-          >
+          <h3 className="text-2xl font-bold text-gray-900 mb-4" id="el-msghaojl">
             Ready to Join Our Success Stories?
           </h3>
           <p className="text-gray-600 mb-8 max-w-3xl mx-auto" id="el-ucut4z9b">
-            Let's discuss how our digital marketing solutions can help your
-            business achieve remarkable growth.
+            Let's discuss how our digital marketing solutions can help your business achieve remarkable growth.
           </p>
           <a
             href="#contact"
@@ -244,7 +281,7 @@ const OurClientComponents = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default OurClientComponents;
+export default OurClientComponents

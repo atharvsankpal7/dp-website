@@ -1,28 +1,32 @@
-// ClientLogo.tsx
-export interface ClientLogoProps {
+import type React from "react";
+import Image from "next/image";
+
+interface ClientLogoProps {
+  id: string;
   src: string;
   alt: string;
-  id: string;
+  className?: string;
+  width?: number;
+  height?: number;
 }
 
-export const ClientLogo: React.FC<ClientLogoProps> = ({ src, alt, id }) => (
-  <div
-    className="group relative flex items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
-    id={id}
-  >
-    {/* Gradient overlay on hover */}
-    <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-    
-    {/* Border animation */}
-    <div className="absolute inset-0 rounded-xl border border-gray-100 group-hover:border-blue-200 transition-colors duration-300"></div>
-    
-    {/* Logo image */}
-    <img
-      src={src}
-      alt={alt}
-      className="relative max-h-12 grayscale hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
-      width="120"
-      height="60"
-    />
-  </div>
-);
+export const ClientLogo: React.FC<ClientLogoProps> = ({
+  id,
+  src,
+  alt,
+  className,
+  width = 120,
+  height = 120,
+}) => {
+  return (
+    <div id={id} className="flex items-center justify-center">
+      <Image
+        src={src || "/placeholder.svg?height=120&width=120"}
+        alt={alt}
+        width={width}
+        height={height}
+        className={className || "w-20 h-20 object-contain"}
+      />
+    </div>
+  );
+};
