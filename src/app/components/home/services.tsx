@@ -8,8 +8,10 @@ const servicesData = [
     icon: <TrendingUp className="h-6 w-6 text-blue-600" />,
     title: 'WhatsApp Promotion',
     description: 'Strategic WhatsApp marketing campaigns that leverage direct messaging to build personal connections with your audience, driving engagement and conversions through targeted content delivery.',
+    services: ['Broadcast Messaging', 'Customer Engagement Automation', 'Performance Tracking & Analytics'],
     accentColor: 'primary' as const
-  },
+  }
+  ,
   {
     icon: <Mail className="h-6 w-6 text-blue-600" />,
     title: 'Email Marketing',
