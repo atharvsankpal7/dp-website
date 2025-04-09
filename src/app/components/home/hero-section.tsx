@@ -1,144 +1,183 @@
-import React from "react";
+"use client"
 
-interface Props {}
+import { useEffect, useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight, Star } from "lucide-react"
 
 const HeroSection = () => {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   return (
     <section
       id="hero"
-      className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 md:py-24 overflow-hidden relative"
+      className="bg-white text-gray-900 py-24 md:py-32 overflow-hidden relative min-h-screen flex items-center"
     >
-      <div className="container mx-auto px-4" id="el-abbeoq2o">
-        <div
-          className="flex flex-col md:flex-row items-center"
-          id="el-rao5uqnh"
-        >
-          {/* <!-- Text Content --> */}
-          <div className="w-full md:w-1/2 mb-12 md:mb-0 z-10" id="el-uok5fh7z">
-            <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-              id="el-904jj1yq"
-            >
-              Prime Choice to Grow Your Profession
-            </h1>
-            <p
-              className="text-lg md:text-xl mb-8 text-blue-100"
-              id="el-q0jbjucu"
-            >
-              Boost your digital presence with customized strategies that
-              deliver measurable results. We help businesses stand out in the
-              digital landscape.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4" id="el-zz97in0i">
-              <a
-                href="#"
-                className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-3 rounded-full transition duration-300 text-center"
-                id="el-j40btzo6"
-                target="_self"
-              >
-                Explore Services
-              </a>
-              <a
-                href="#"
-                className="bg-transparent hover:bg-white hover:text-blue-600 text-white font-medium px-8 py-3 rounded-full border-2 border-white transition duration-300 text-center"
-                id="el-xfisjepn"
-                target="_self"
-              >
-                Contact Us
-              </a>
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row items-center gap-16">
+          {/* Text Content */}
+          <div
+            className={`w-full md:w-1/2 mb-12 md:mb-0 z-10 transition-all duration-1000 ease-out ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
+            <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-gradient-to-r from-blue-50 to-blue-50 border border-blue-100">
+              <div className="flex items-center">
+                <span className="flex h-2 w-2 rounded-full bg-blue-600 mr-2"></span>
+                <span className="text-sm font-medium text-blue-700">Digital Marketing Experts</span>
+              </div>
             </div>
 
-            <div className="mt-12 " id="el-qr9t7i8x">
-              <p className="font-medium mb-3" id="el-9ai561pi">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+              <span className="relative inline-block">
+                <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
+                  Prime Choice
+                </span>
+                <span className="absolute -bottom-1.5 left-0 w-full h-3 bg-gradient-to-r  opacity-30 rounded"></span>
+              </span>{" "}
+              to Grow Your Profession
+            </h1>
+
+            <p className="text-lg md:text-xl mb-10 text-gray-600 leading-relaxed max-w-xl">
+              Boost your digital presence with customized strategies that deliver measurable results. Our expert team
+              creates solutions tailored to your business goals.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-5">
+              <Link
+                href="#services"
+                className="relative overflow-hidden group px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-medium rounded-xl shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <span className="relative z-10 flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
+                  Explore Services
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+              </Link>
+
+              <Link
+                href="#contact"
+                className="relative overflow-hidden group px-8 py-4 bg-white text-blue-600 font-medium rounded-xl border-2 border-blue-200 hover:border-blue-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <span className="relative z-10 flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
+                  Contact Us
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+              </Link>
+            </div>
+
+            <div className="mt-16">
+              <p className="font-medium mb-4 text-gray-600 flex items-center">
+                <Star className="h-4 w-4 text-yellow-500 mr-2" fill="#EAB308" />
                 Trusted by leading brands
               </p>
-              <div
-                className="flex flex-wrap gap-6 items-center"
-                id="el-147ze19s"
-              >
-                <div className="bg-white/20 p-2 rounded" id="el-2aw5u1nf">
-                  <span className="text-sm font-bold" id="el-qwzg4h1m">
-                    COMPANY
-                  </span>
-                </div>
-                <div className="bg-white/20 p-2 rounded" id="el-u613krij">
-                  <span className="text-sm font-bold" id="el-2esmyro5">
-                    BRAND
-                  </span>
-                </div>
-                <div className="bg-white/20 p-2 rounded" id="el-beyk122k">
-                  <span className="text-sm font-bold" id="el-m06dpxe5">
-                    ENTERPRISE
-                  </span>
-                </div>
+              <div className="flex flex-wrap gap-6 items-center">
+                {[
+                  { name: "Shivjal", logo: "/logo2.png?height=30&width=120" },
+                  { name: "Muktai Textile", logo: "/logo5.png?height=30&width=100" },
+                  { name: "KMart", logo: "/logo4.png?height=30&width=140" },
+                ].map((brand, index) => (
+                  <div
+                    key={index}
+                    className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
+                  >
+                    <Image
+                      src={brand.logo || "/placeholder.svg"}
+                      alt={brand.name}
+                      width={index === 0 ? 120 : index === 1 ? 100 : 140}
+                      height={30}
+                      className="opacity-80 hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* <!-- Mascot/Image Content --> */}
-          <div className="w-full md:w-1/2 relative z-10" id="el-h5tp8he1">
-            <div className="relative" id="el-dgj9049w">
-              <img
-                src="https://placehold.co/600x600?text=Digital Growth Mascot Character"
-                alt="Digital Growth Mascot Character"
-                className="mx-auto max-w-full rounded-lg shadow-2xl border-4 border-white/20"
-                width="600"
-                height="600"
-                id="el-eix3th3y"
-              />{" "}
-              <div
-                className="absolute -top-4 -right-4 bg-orange-500 text-white p-4 rounded-full shadow-lg"
-                id="el-pszug96d"
-              >
-                <span className="text-xl font-bold" id="el-w7lmv3bv">
-                  100%
-                </span>
-                <span className="text-sm block" id="el-tl8ne4vl">
-                  Success
-                </span>
+          {/* Mascot/Image Content */}
+          <div
+            className={`w-full md:w-1/2 relative z-10 transition-all duration-1000 ease-out delay-300 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+              <div className="relative">
+                <Image
+                  src="/mascot.png?height=600&width=600"
+                  alt="Digital Growth Mascot Character"
+                  width={600}
+                  height={600}
+                  className="mx-auto max-w-full rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-2xl"
+                />
+
+                <div className="absolute -top-6 -right-6 bg-gradient-to-r from-blue-600 to-blue-800 text-white p-5 rounded-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  <div className="flex items-center gap-2">
+                    <div className="bg-white/20 p-2 rounded-lg">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M20 6L9 17L4 12"
+                          stroke="white"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <span className="text-2xl font-bold block leading-none">320%</span>
+                      <span className="text-sm font-medium block text-blue-100">Avg. ROI</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-blue-100 p-2 rounded-lg">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                          fill="#FFD700"
+                          stroke="#FFD700"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <span className="text-xl font-bold block text-gray-900 leading-none">5-Star</span>
+                      <span className="text-sm font-medium block text-gray-500">Rated Agency</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* <!-- Background Elements --> */}
-      <div
-        className="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl opacity-20"
-        id="el-yen6433u"
-      ></div>
-      <div
-        className="absolute bottom-0 left-0 w-64 h-64 bg-blue-400 rounded-full filter blur-3xl opacity-20"
-        id="el-8fqolyk8"
-      ></div>
+      {/* Background Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 rounded-full filter blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/5 rounded-full filter blur-3xl"></div>
+      <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-blue-600/5 rounded-full filter blur-3xl"></div>
 
-      {/* <!-- Scroll Indicator --> */}
-      <div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
-        id="el-984h6qlr"
-      >
-        <span className="text-sm mb-2" id="el-zkycpo0j">
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer animate-pulse">
+        <span className="text-sm mb-2 text-gray-500 hover:text-blue-600 transition-colors duration-300">
           Scroll to explore
         </span>
-        <svg
-          className="animate-bounce w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          id="el-e0r1s7rc"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            id="el-aqp9m8o3"
-          ></path>
-        </svg>
+        <div className="w-8 h-12 border-2 border-blue-300 rounded-full flex justify-center p-1">
+          <div className="w-1.5 h-3 bg-blue-500 rounded-full animate-bounce"></div>
+        </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default HeroSection;
+export default HeroSection
+

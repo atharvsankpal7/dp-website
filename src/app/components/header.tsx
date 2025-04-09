@@ -24,6 +24,15 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   // State for mobile menu toggle
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Toggle mobile menu
   const toggleMobileMenu = () => {
@@ -31,14 +40,16 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="bg-white shadow-md py-4">
+    <header className={`fixed w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'
+    }`}>
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="#" className="text-2xl font-bold text-blue-600">
+            <a href="#" className="text-2xl font-bold">
               <span className="flex items-center">
-                <span className="mr-2">{brandName}</span>
+                <span className="gradient-text">{brandName}</span>
               </span>
             </a>
           </div>
@@ -52,9 +63,8 @@ const Header: React.FC<HeaderProps> = ({
                     href={item.href} 
                     className={`
                       ${item.type === 'primary' 
-                        ? 'bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700' 
-                        : 'text-gray-800 hover:text-blue-600'}
-                      transition duration-300
+                        ? 'btn-primary' 
+                        : 'text-gray-600 hover:text-blue-500 transition-colors duration-200'}
                     `}
                   >
                     {item.label}
@@ -65,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({
             {navItems.length === 0 && (
               <a 
                 href={ctaLink} 
-                className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300"
+                className="btn-primary"
               >
                 {ctaText}
               </a>
@@ -76,7 +86,7 @@ const Header: React.FC<HeaderProps> = ({
           <div className="md:hidden">
             <button 
               onClick={toggleMobileMenu}
-              className="text-gray-500 hover:text-blue-600 focus:outline-none"
+              className="text-gray-600 hover:text-primary focus:outline-none transition-colors duration-200"
               aria-label="Open menu"
             >
               <svg 
@@ -98,9 +108,11 @@ const Header: React.FC<HeaderProps> = ({
         </nav>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-2 border-t border-gray-200">
-            <ul className="flex flex-col space-y-2">
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
+        } overflow-hidden`}>
+          <div className="py-4 border-t border-gray-100">
+            <ul className="flex flex-col space-y-3">
               {navItems.map((item, index) => (
                 <li key={index}>
                   <a 
@@ -108,9 +120,8 @@ const Header: React.FC<HeaderProps> = ({
                     className={`
                       block px-4 py-2 
                       ${item.type === 'primary' 
-                        ? 'bg-blue-600 text-white rounded-full text-center hover:bg-blue-700' 
-                        : 'text-gray-800 hover:text-blue-600'}
-                      transition duration-300
+                        ? 'btn-primary text-center' 
+                        : 'text-gray-600 hover:text-blue-500 transition-colors duration-200'}
                     `}
                   >
                     {item.label}
@@ -121,7 +132,7 @@ const Header: React.FC<HeaderProps> = ({
                 <li>
                   <a 
                     href={ctaLink} 
-                    className="block bg-blue-600 text-white px-4 py-2 rounded-full text-center hover:bg-blue-700 transition duration-300"
+                    className="btn-primary text-center block"
                   >
                     {ctaText}
                   </a>
@@ -129,7 +140,7 @@ const Header: React.FC<HeaderProps> = ({
               )}
             </ul>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );
