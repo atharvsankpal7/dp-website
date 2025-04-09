@@ -1,49 +1,73 @@
-import React from 'react';
+import type React from "react"
+import { Check } from "lucide-react"
 
 interface ServiceCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  accentColor: 'primary' | 'secondary';
-  services?: string[];
+  icon: React.ReactNode
+  title: string
+  description: string
+  accentColor: "primary" | "secondary" | "tertiary" | "quaternary"
+  services?: string[]
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({
-  icon,
-  title,
-  description,
-  accentColor,
-  services
-}) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, accentColor, services }) => {
+  // Map accent colors to their respective background colors
+  const accentColorMap = {
+    primary: "bg-blue-100 text-blue-600",
+    secondary: "bg-purple-100 text-purple-600",
+    tertiary: "bg-sky-100 text-sky-600",
+    quaternary: "bg-purple-50 text-purple-400",
+  }
+
+  // Map accent colors to their respective text colors for the title
+  const titleColorMap = {
+    primary: "text-blue-900",
+    secondary: "text-purple-900",
+    tertiary: "text-sky-900",
+    quaternary: "text-purple-800",
+  }
+
+  // Map accent colors to their respective check icon colors
+  const checkColorMap = {
+    primary: "text-blue-500 bg-blue-100",
+    secondary: "text-purple-500 bg-purple-100",
+    tertiary: "text-sky-500 bg-sky-100",
+    quaternary: "text-purple-400 bg-purple-50",
+  }
+
   return (
-    <div
-      className={`bg-white rounded-xl p-6 shadow-soft hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-t-4 ${
-        accentColor === 'primary' ? 'border-blue-600' : 'border-blue-400'
-      }`}
-    >
-      <div className="flex items-center mb-4">
-        <div className={`p-3 rounded-lg ${
-          accentColor === 'primary' ? 'bg-blue-600/10' : 'bg-blue-800/10'
-        }`}>
-          {icon}
-        </div>
+    <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+      <div className="mb-5">
+        <div className={`rounded-xl p-3 inline-flex ${accentColorMap[accentColor]}`}>{icon}</div>
       </div>
-      <h3 className="text-xl font-bold mb-3 text-gray-900">{title}</h3>
-      <p className="text-gray-600 mb-4 line-clamp-3">{description}</p>
+
+      <h3 className={`text-xl font-bold mb-3 ${titleColorMap[accentColor]}`}>{title}</h3>
+
+      <p className="text-gray-600 mb-6 text-sm leading-relaxed">{description}</p>
+
       {services && services.length > 0 && (
-        <ul className="space-y-2">
+        <ul className="space-y-3">
           {services.map((service, index) => (
-            <li key={index} className="flex items-center text-sm text-gray-600">
-              <span className={`w-1.5 h-1.5 rounded-full mr-2 ${
-                accentColor === 'primary' ? 'bg-blue-500' : 'bg-blue-700'
-              }`} />
+            <li key={index} className="flex items-center text-sm text-gray-700">
+              <span
+                className={`w-5 h-5 rounded-md mr-2.5 flex items-center justify-center ${checkColorMap[accentColor]}`}
+              >
+                <Check size={14} />
+              </span>
               {service}
             </li>
           ))}
         </ul>
       )}
-    </div>
-  );
-};
 
-export default ServiceCard;
+      <div className="absolute top-6 right-6 opacity-20">
+        <svg width="24" height="6" viewBox="0 0 24 6" fill="currentColor" className="text-gray-300">
+          <circle cx="3" cy="3" r="3" />
+          <circle cx="12" cy="3" r="3" />
+          <circle cx="21" cy="3" r="3" />
+        </svg>
+      </div>
+    </div>
+  )
+}
+
+export default ServiceCard

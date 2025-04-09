@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react"
 import { ClientLogo } from "./client-logo"
-import StatisticCard from "./client/metrices"
 import SuccessStoryCard from "./client/success-story"
 
 type Props = {}
@@ -40,7 +39,7 @@ const OurClientComponents = () => {
   const HappyClientsIcon = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-8 w-8 text-blue-600"
+      className="h-10 w-10 text-blue-600"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -57,7 +56,7 @@ const OurClientComponents = () => {
   const CampaignsIcon = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-8 w-8 text-orange-600"
+      className="h-10 w-10 text-orange-600"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -74,7 +73,7 @@ const OurClientComponents = () => {
   const ROIIcon = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-8 w-8 text-green-600"
+      className="h-10 w-10 text-green-600"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -130,7 +129,6 @@ const OurClientComponents = () => {
       companyName: "Muktai Textile",
       testimonial:
         "Reduced customer acquisition costs by 42% while generating 3x more qualified leads through targeted SEO.",
-      
     },
     {
       logo: "/logo4.png",
@@ -147,18 +145,19 @@ const OurClientComponents = () => {
     const scrollContainer = scrollRef.current
     if (!scrollContainer) return
 
-    let animationFrameId: number | null = null
+    let animationFrameId: number
+    let isHovering = false
     let scrollPosition = 0
-    const scrollSpeed = 0.5 // Adjust for faster/slower scrolling
+    const scrollSpeed = 0.5
 
     const animateScroll = () => {
-      if (!scrollContainer) return // Guard in case the ref becomes null
+      if (!scrollContainer || isHovering) return
 
       scrollPosition += scrollSpeed
       scrollContainer.scrollLeft = scrollPosition
 
-      // If the scroll reaches the end of the duplicated content, reset to the beginning
-      if (scrollPosition >= scrollContainer.scrollWidth / 2) {
+      // Reset when reaching the end of the first set of logos
+      if (scrollPosition >= scrollContainer.scrollWidth / 3) {
         scrollPosition = 0
         scrollContainer.scrollLeft = 0
       }
@@ -166,44 +165,68 @@ const OurClientComponents = () => {
       animationFrameId = requestAnimationFrame(animateScroll)
     }
 
+    // Start the animation
     animationFrameId = requestAnimationFrame(animateScroll)
 
-    return () => {
-      if (animationFrameId !== null) {
-        cancelAnimationFrame(animationFrameId)
-      }
+    // Pause animation on hover
+    const handleMouseEnter = () => {
+      isHovering = true
     }
-  }, [clientLogos])
+
+    const handleMouseLeave = () => {
+      isHovering = false
+      animationFrameId = requestAnimationFrame(animateScroll)
+    }
+
+    scrollContainer.addEventListener("mouseenter", handleMouseEnter)
+    scrollContainer.addEventListener("mouseleave", handleMouseLeave)
+
+    return () => {
+      cancelAnimationFrame(animationFrameId)
+      scrollContainer.removeEventListener("mouseenter", handleMouseEnter)
+      scrollContainer.removeEventListener("mouseleave", handleMouseLeave)
+    }
+  }, [])
 
   return (
     <section id="clients" className="py-16 bg-white">
       <div className="container mx-auto px-4" id="el-fuy4npec">
-        <div className="text-center mb-16" id="el-lbaq7jft">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900" id="el-bpxkowae">
+        {/* <div className="text-center mb-16" id="el-lbaq7jft">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900" id="el-bpxkowae">
             Our Happy Clients
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto" id="el-fa16xi3b">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto" id="el-fa16xi3b">
             Join hundreds of businesses that have achieved remarkable growth through our digital solutions.
+          </p>
+        </div> */}
+        <div className="text-center mb-16">
+          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block">Best Service</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent"> Our Happy Clients</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Join hundreds of businesses that have achieved remarkable growth through our digital solutions.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {statisticsData.map((stat, index) => (
-            <StatisticCard
+            <div
               key={index}
-              icon={stat.icon}
-              number={stat.number}
-              numberSuffix={stat.numberSuffix}
-              title={stat.title}
-              description={stat.description}
-              bgColor={stat.bgColor}
-              textColor={stat.textColor}
-            />
+              className={`${stat.bgColor} rounded-xl p-8 text-center transition-all duration-300 hover:shadow-md`}
+            >
+              <div className="flex justify-center mb-4">
+                <div className={`rounded-full ${stat.bgColor} p-4 ${stat.textColor}`}>{stat.icon}</div>
+              </div>
+              <div className={`text-5xl font-bold mb-2 ${stat.textColor}`}>
+                {stat.number}
+                {stat.numberSuffix}
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">{stat.title}</h3>
+              <p className="text-gray-600">{stat.description}</p>
+            </div>
           ))}
         </div>
 
         <div className="mb-16">
-
           <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center" id="el-ybnzq211">
             <span className="text-gray-500">What Our Clients Say</span>
           </h2>
@@ -234,7 +257,7 @@ const OurClientComponents = () => {
                     id={logo.id}
                     src={logo.src}
                     alt={logo.alt}
-                    className="w-24 h-24 rounded-full object-contain border-2 border-gray-100 shadow-sm transition-transform"
+                    className="w-32 h-32 rounded-full object-contain border-2 border-gray-100 shadow-sm transition-transform"
                   />
                 </div>
               ))}
@@ -245,7 +268,7 @@ const OurClientComponents = () => {
                     id={`dup-${logo.id}`}
                     src={logo.src}
                     alt={logo.alt}
-                    className="w-24 h-24 rounded-full object-contain border-2 border-gray-100 shadow-sm transition-transform"
+                    className="w-32 h-32 rounded-full object-contain border-2 border-gray-100 shadow-sm transition-transform"
                   />
                 </div>
               ))}
@@ -256,7 +279,7 @@ const OurClientComponents = () => {
                     id={`dup-${logo.id}`}
                     src={logo.src}
                     alt={logo.alt}
-                    className="w-24 h-24 rounded-full object-contain border-2 border-gray-100 shadow-sm transition-transform"
+                    className="w-32 h-32 rounded-full object-contain border-2 border-gray-100 shadow-sm transition-transform"
                   />
                 </div>
               ))}
