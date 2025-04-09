@@ -15,7 +15,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="bg-white text-gray-900 py-24 md:py-32 overflow-hidden relative min-h-screen flex items-center"
+      className="bg-white text-gray-900 py-24 md:py-32 overflow-hidden relative min-h-screen flex items-center border-b-2 border-blue-300"
     >
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-16">
@@ -71,32 +71,34 @@ const HeroSection = () => {
             </div>
 
             <div className="mt-16">
-              <p className="font-medium mb-4 text-gray-600 flex items-center">
-                <Star className="h-4 w-4 text-yellow-500 mr-2" fill="#EAB308" />
-                Trusted by leading brands
+              <p className="font-medium mb-6 text-gray-700 flex items-center text-lg">
+                <Star className="h-5 w-5 text-yellow-500 mr-3" fill="#EAB308" />
+                Trusted by Industry Leaders
               </p>
-              <div className="flex flex-wrap gap-6 items-center">
+              <div className="flex flex-wrap gap-8 items-center">
                 {[
-                  { name: "Shivjal", logo: "/logo2.png?height=30&width=120" },
-                  { name: "Muktai Textile", logo: "/logo5.png?height=30&width=100" },
-                  { name: "KMart", logo: "/logo4.png?height=30&width=140" },
+                  { name: "Shivjal", logo: "/logo2.png" },
+                  { name: "Muktai Textile", logo: "/logo5.png" },
+                  { name: "KMart", logo: "/logo4.png" },
                 ].map((brand, index) => (
                   <div
                     key={index}
-                    className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
+                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-blue-100/70 group"
                   >
-                    <Image
-                      src={brand.logo || "/placeholder.svg"}
-                      alt={brand.name}
-                      width={index === 0 ? 120 : index === 1 ? 100 : 140}
-                      height={30}
-                      className="opacity-80 hover:opacity-100 transition-opacity duration-300"
-                    />
+                    <div className="relative">
+                      <Image
+                        src={brand.logo || "/placeholder.svg"}
+                        alt={brand.name}
+                        width={100}
+                        height={35}
+                        className="opacity-75 group-hover:opacity-100 transition-all duration-300 filter group-hover:brightness-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-50/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
+            </div>          </div>
 
           {/* Mascot/Image Content */}
           <div

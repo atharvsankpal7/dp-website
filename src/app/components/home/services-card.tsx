@@ -35,7 +35,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, acc
   }
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+    <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-2 transition-all duration-300 border border-blue-200">
       <div className="mb-5">
         <div className={`rounded-xl p-3 inline-flex ${accentColorMap[accentColor]}`}>{icon}</div>
       </div>

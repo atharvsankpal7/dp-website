@@ -19,14 +19,13 @@ export default function Home() {
     },
   ];
 
-  
   return (
     <>
       <Header navItems={navItems} />
       <HeroSection />
-      <ServicesSection/>
-      <OurClientComponents/>
-      <ContactInfoComponent/>
+      <ServicesSection />
+      <OurClientComponents />
+      <ContactInfoComponent />
       <FooterComponent />
     </>
   );

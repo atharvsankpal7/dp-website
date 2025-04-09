@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
-import { ClientLogo } from "./client-logo"
-import SuccessStoryCard from "./client/success-story"
+import { useEffect, useRef } from "react";
+import { ClientLogo } from "./client-logo";
+import SuccessStoryCard from "./client/success-story";
 
-type Props = {}
+type Props = {};
 
 const OurClientComponents = () => {
   const clientLogos = [
@@ -33,7 +33,7 @@ const OurClientComponents = () => {
       src: "/logo5.png",
       alt: "Client Company Logo 5",
     },
-  ]
+  ];
 
   // SVG Icons
   const HappyClientsIcon = () => (
@@ -51,7 +51,7 @@ const OurClientComponents = () => {
         d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
       />
     </svg>
-  )
+  );
 
   const CampaignsIcon = () => (
     <svg
@@ -68,7 +68,7 @@ const OurClientComponents = () => {
         d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
       />
     </svg>
-  )
+  );
 
   const ROIIcon = () => (
     <svg
@@ -85,7 +85,7 @@ const OurClientComponents = () => {
         d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
       />
     </svg>
-  )
+  );
 
   const statisticsData = [
     {
@@ -93,7 +93,8 @@ const OurClientComponents = () => {
       number: 500,
       numberSuffix: "+",
       title: "Happy Clients",
-      description: "Businesses achieving their digital marketing goals with our strategies.",
+      description:
+        "Businesses achieving their digital marketing goals with our strategies.",
       bgColor: "bg-blue-50",
       textColor: "text-blue-600",
     },
@@ -115,7 +116,7 @@ const OurClientComponents = () => {
       bgColor: "bg-green-50",
       textColor: "text-green-600",
     },
-  ]
+  ];
 
   const successStoriesData = [
     {
@@ -136,57 +137,57 @@ const OurClientComponents = () => {
       testimonial:
         "Achieved 230% growth in lead generation through integrated marketing campaigns and content strategy.",
     },
-  ]
+  ];
 
   // Create refs for the logo carousel
-  const scrollRef = useRef<HTMLDivElement>(null)
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const scrollContainer = scrollRef.current
-    if (!scrollContainer) return
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
 
-    let animationFrameId: number
-    let isHovering = false
-    let scrollPosition = 0
-    const scrollSpeed = 0.5
+    let animationFrameId: number;
+    let isHovering = false;
+    let scrollPosition = 0;
+    const scrollSpeed = 0.5;
 
     const animateScroll = () => {
-      if (!scrollContainer || isHovering) return
+      if (!scrollContainer || isHovering) return;
 
-      scrollPosition += scrollSpeed
-      scrollContainer.scrollLeft = scrollPosition
+      scrollPosition += scrollSpeed;
+      scrollContainer.scrollLeft = scrollPosition;
 
       // Reset when reaching the end of the first set of logos
       if (scrollPosition >= scrollContainer.scrollWidth / 3) {
-        scrollPosition = 0
-        scrollContainer.scrollLeft = 0
+        scrollPosition = 0;
+        scrollContainer.scrollLeft = 0;
       }
 
-      animationFrameId = requestAnimationFrame(animateScroll)
-    }
+      animationFrameId = requestAnimationFrame(animateScroll);
+    };
 
     // Start the animation
-    animationFrameId = requestAnimationFrame(animateScroll)
+    animationFrameId = requestAnimationFrame(animateScroll);
 
     // Pause animation on hover
     const handleMouseEnter = () => {
-      isHovering = true
-    }
+      isHovering = true;
+    };
 
     const handleMouseLeave = () => {
-      isHovering = false
-      animationFrameId = requestAnimationFrame(animateScroll)
-    }
+      isHovering = false;
+      animationFrameId = requestAnimationFrame(animateScroll);
+    };
 
-    scrollContainer.addEventListener("mouseenter", handleMouseEnter)
-    scrollContainer.addEventListener("mouseleave", handleMouseLeave)
+    scrollContainer.addEventListener("mouseenter", handleMouseEnter);
+    scrollContainer.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      cancelAnimationFrame(animationFrameId)
-      scrollContainer.removeEventListener("mouseenter", handleMouseEnter)
-      scrollContainer.removeEventListener("mouseleave", handleMouseLeave)
-    }
-  }, [])
+      cancelAnimationFrame(animationFrameId);
+      scrollContainer.removeEventListener("mouseenter", handleMouseEnter);
+      scrollContainer.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
 
   return (
     <section id="clients" className="py-16 bg-white">
@@ -200,10 +201,15 @@ const OurClientComponents = () => {
           </p>
         </div> */}
         <div className="text-center mb-16">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block">Best Service</span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent"> Our Happy Clients</h2>
+          {/* <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block">
+            Best Service
+          </span> */}
+          <h2 className="text-blue-500 font-bold uppercase  text-4xl md:text-5xl bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent ">
+            
+            Our Happy Clients
+          </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Join hundreds of businesses that have achieved remarkable growth through our digital solutions.
+            Hear from the people who have experienced our services firsthand.
           </p>
         </div>
 
@@ -214,20 +220,29 @@ const OurClientComponents = () => {
               className={`${stat.bgColor} rounded-xl p-8 text-center transition-all duration-300 hover:shadow-md`}
             >
               <div className="flex justify-center mb-4">
-                <div className={`rounded-full ${stat.bgColor} p-4 ${stat.textColor}`}>{stat.icon}</div>
+                <div
+                  className={`rounded-full ${stat.bgColor} p-4 ${stat.textColor}`}
+                >
+                  {stat.icon}
+                </div>
               </div>
               <div className={`text-5xl font-bold mb-2 ${stat.textColor}`}>
                 {stat.number}
                 {stat.numberSuffix}
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">{stat.title}</h3>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">
+                {stat.title}
+              </h3>
               <p className="text-gray-600">{stat.description}</p>
             </div>
           ))}
         </div>
 
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center" id="el-ybnzq211">
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-10 text-center"
+            id="el-ybnzq211"
+          >
             <span className="text-gray-500">What Our Clients Say</span>
           </h2>
 
@@ -239,7 +254,10 @@ const OurClientComponents = () => {
         </div>
 
         <div id="el-tjd3j9c2" className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center" id="el-ybnzq211">
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-6 text-center"
+            id="el-ybnzq211"
+          >
             <span className="text-gray-500">Satisfied Clients</span>
           </h2>
 
@@ -288,11 +306,15 @@ const OurClientComponents = () => {
         </div>
 
         <div className="mt-16 text-center" id="el-2rb2hq7b">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4" id="el-msghaojl">
+          <h3
+            className="text-2xl font-bold text-gray-900 mb-4"
+            id="el-msghaojl"
+          >
             Ready to Join Our Success Stories?
           </h3>
           <p className="text-gray-600 mb-8 max-w-3xl mx-auto" id="el-ucut4z9b">
-            Let's discuss how our digital marketing solutions can help your business achieve remarkable growth.
+            Let's discuss how our digital marketing solutions can help your
+            business achieve remarkable growth.
           </p>
           <a
             href="#contact"
@@ -304,7 +326,7 @@ const OurClientComponents = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default OurClientComponents
+export default OurClientComponents;

@@ -137,8 +137,8 @@ const ContactInfoComponent = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block">Contact Us</span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent">Get In Touch</h2>
+          <h2 className="text-blue-500 font-bold uppercase  text-4xl md:text-5xl bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent mb-5 ">Contact Us</h2>
+          {/* <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent">Get In Touch</h2> */}
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Ready to grow your digital presence? Reach out to our team for a personalized strategy.
           </p>

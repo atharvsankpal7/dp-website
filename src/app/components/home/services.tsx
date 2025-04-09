@@ -72,16 +72,16 @@ const servicesData = [
 
 const ServicesSection: React.FC = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white" id="services">
+    <section className="py-24  bg-blue-50/100 border-b-2 border-blue-200" id="services">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-20 opacity-0 animate-fade-in">
-          <span className="text-blue-500 font-semibold text-sm uppercase tracking-wider">Our Services</span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent">
+          <span className="text-blue-500 font-bold uppercase  text-4xl md:text-5xl bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent ">Services we Provide</span>
+          {/* <h2 className="font-bold mb-6 bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent">
             Transforming Businesses Digitally
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Comprehensive digital solutions designed to boost your brand's visibility and drive sustainable growth in today's competitive landscape.
-          </p>
+          </p> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -96,7 +96,7 @@ const ServicesSection: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-20 0 rounded-2xl p-10 md:p-12 shadow-soft opacity-0 animate-fade-in" style={{ animationDelay: '800ms' }}>
+        <div className="mt-20 0 rounded-2xl p-10 md:p-12 shadow-soft opacity-0 animate-fade-in border-2 border-blue-400/100" style={{ animationDelay: '800ms' }}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
