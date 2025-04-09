@@ -25,19 +25,19 @@ const HeroSection = () => {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-100">
+            <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-gradient-to-r from-blue-50 to-blue-50 border border-blue-100">
               <div className="flex items-center">
-                <span className="flex h-2 w-2 rounded-full bg-purple-600 mr-2"></span>
-                <span className="text-sm font-medium text-purple-700">Digital Marketing Experts</span>
+                <span className="flex h-2 w-2 rounded-full bg-blue-600 mr-2"></span>
+                <span className="text-sm font-medium text-blue-700">Digital Marketing Experts</span>
               </div>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
               <span className="relative inline-block">
-                <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-purple-500 to-blue-600">
+                <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
                   Prime Choice
                 </span>
-                <span className="absolute -bottom-1.5 left-0 w-full h-3 bg-gradient-to-r from-purple-200 to-blue-200 opacity-30 rounded"></span>
+                <span className="absolute -bottom-1.5 left-0 w-full h-3 bg-gradient-to-r  opacity-30 rounded"></span>
               </span>{" "}
               to Grow Your Profession
             </h1>
@@ -50,18 +50,18 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-5">
               <Link
                 href="#services"
-                className="relative overflow-hidden group px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white font-medium rounded-xl shadow-lg shadow-purple-200 hover:shadow-xl hover:shadow-purple-300 transition-all duration-300 transform hover:-translate-y-1"
+                className="relative overflow-hidden group px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-medium rounded-xl shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300 transition-all duration-300 transform hover:-translate-y-1"
               >
                 <span className="relative z-10 flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
                   Explore Services
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-800 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
               </Link>
 
               <Link
                 href="#contact"
-                className="relative overflow-hidden group px-8 py-4 bg-white text-purple-600 font-medium rounded-xl border-2 border-purple-200 hover:border-purple-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
+                className="relative overflow-hidden group px-8 py-4 bg-white text-blue-600 font-medium rounded-xl border-2 border-blue-200 hover:border-blue-300 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
               >
                 <span className="relative z-10 flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
                   Contact Us
@@ -77,9 +77,9 @@ const HeroSection = () => {
               </p>
               <div className="flex flex-wrap gap-6 items-center">
                 {[
-                  { name: "COMPANY", logo: "/placeholder.svg?height=30&width=120" },
-                  { name: "BRAND", logo: "/placeholder.svg?height=30&width=100" },
-                  { name: "ENTERPRISE", logo: "/placeholder.svg?height=30&width=140" },
+                  { name: "Shivjal", logo: "/logo2.png?height=30&width=120" },
+                  { name: "Muktai Textile", logo: "/logo5.png?height=30&width=100" },
+                  { name: "KMart", logo: "/logo4.png?height=30&width=140" },
                 ].map((brand, index) => (
                   <div
                     key={index}
@@ -105,17 +105,17 @@ const HeroSection = () => {
             }`}
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=600&width=600"
+                  src="/mascot.png?height=600&width=600"
                   alt="Digital Growth Mascot Character"
                   width={600}
                   height={600}
                   className="mx-auto max-w-full rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-2xl"
                 />
 
-                <div className="absolute -top-6 -right-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white p-5 rounded-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                <div className="absolute -top-6 -right-6 bg-gradient-to-r from-blue-600 to-blue-800 text-white p-5 rounded-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <div className="flex items-center gap-2">
                     <div className="bg-white/20 p-2 rounded-lg">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -137,12 +137,12 @@ const HeroSection = () => {
 
                 <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <div className="flex items-center gap-3">
-                    <div className="bg-purple-100 p-2 rounded-lg">
+                    <div className="bg-blue-100 p-2 rounded-lg">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                          fill="#9333EA"
-                          stroke="#9333EA"
+                          fill="#FFD700"
+                          stroke="#FFD700"
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -162,17 +162,17 @@ const HeroSection = () => {
       </div>
 
       {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/5 rounded-full filter blur-3xl"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 rounded-full filter blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/5 rounded-full filter blur-3xl"></div>
-      <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-purple-600/5 rounded-full filter blur-3xl"></div>
+      <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-blue-600/5 rounded-full filter blur-3xl"></div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer animate-pulse">
-        <span className="text-sm mb-2 text-gray-500 hover:text-purple-600 transition-colors duration-300">
+        <span className="text-sm mb-2 text-gray-500 hover:text-blue-600 transition-colors duration-300">
           Scroll to explore
         </span>
-        <div className="w-8 h-12 border-2 border-purple-300 rounded-full flex justify-center p-1">
-          <div className="w-1.5 h-3 bg-purple-500 rounded-full animate-bounce"></div>
+        <div className="w-8 h-12 border-2 border-blue-300 rounded-full flex justify-center p-1">
+          <div className="w-1.5 h-3 bg-blue-500 rounded-full animate-bounce"></div>
         </div>
       </div>
     </section>

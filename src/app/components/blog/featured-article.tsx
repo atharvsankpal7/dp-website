@@ -13,7 +13,7 @@ export default function FeaturedArticle() {
                         fill
                         className="object-cover"
                     />
-                    <div className="absolute top-4 left-4 bg-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    <div className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
                         Featured
                     </div>
                 </div>
@@ -27,7 +27,7 @@ export default function FeaturedArticle() {
                         </div>
                     </div>
                     <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
-                        <Link href="/blog/ai-powered-marketing-future-is-now" className="hover:text-purple-600 transition-colors">
+                        <Link href="/blog/ai-powered-marketing-future-is-now" className="hover:text-blue-600 transition-colors">
                             AI-Powered Marketing: The Future is Now and Here's How to Leverage It
                         </Link>
                     </h2>
@@ -52,7 +52,7 @@ export default function FeaturedArticle() {
                         </div>
                         <Link
                             href="/blog/ai-powered-marketing-future-is-now"
-                            className="flex items-center gap-1 text-purple-600 hover:text-purple-700 font-medium"
+                            className="flex items-center gap-1 text-blue-600 hover:text-blue-700 font-medium"
                         >
                             Read more <ArrowRight className="h-4 w-4" />
                         </Link>

@@ -6,7 +6,7 @@ export default function PopularArticles() {
     return (
         <div className="bg-white rounded-xl shadow-md p-6 mt-8">
             <div className="flex items-center gap-2 mb-6">
-                <TrendingUp className="h-5 w-5 text-purple-600" />
+                <TrendingUp className="h-5 w-5 text-blue-600" />
                 <h3 className="text-xl font-bold text-gray-900">Popular Articles</h3>
             </div>
             <div className="space-y-6">
@@ -22,9 +22,9 @@ export default function PopularArticles() {
                         />
                     </div>
                     <div>
-                        <span className="text-xs font-semibold text-purple-600 block mb-1">SEO</span>
+                        <span className="text-xs font-semibold text-blue-600 block mb-1">SEO</span>
                         <h4 className="font-medium text-gray-900 leading-tight mb-1">
-                            <Link href="/blog/google-algorithm-update-2025" className="hover:text-purple-600 transition-colors">
+                            <Link href="/blog/google-algorithm-update-2025" className="hover:text-blue-600 transition-colors">
                                 What Google's 2025 Algorithm Update Means for Your Business
                             </Link>
                         </h4>
@@ -50,7 +50,7 @@ export default function PopularArticles() {
                     <div>
                         <span className="text-xs font-semibold text-green-600 block mb-1">Content</span>
                         <h4 className="font-medium text-gray-900 leading-tight mb-1">
-                            <Link href="/blog/content-marketing-roi-calculation" className="hover:text-purple-600 transition-colors">
+                            <Link href="/blog/content-marketing-roi-calculation" className="hover:text-blue-600 transition-colors">
                                 How to Calculate and Maximize Your Content Marketing ROI
                             </Link>
                         </h4>
@@ -76,7 +76,7 @@ export default function PopularArticles() {
                     <div>
                         <span className="text-xs font-semibold text-blue-600 block mb-1">Social Media</span>
                         <h4 className="font-medium text-gray-900 leading-tight mb-1">
-                            <Link href="/blog/b2b-social-media-strategy" className="hover:text-purple-600 transition-colors">
+                            <Link href="/blog/b2b-social-media-strategy" className="hover:text-blue-600 transition-colors">
                                 B2B Social Media Strategy: Engagement That Drives Conversions
                             </Link>
                         </h4>
@@ -104,7 +104,7 @@ export default function PopularArticles() {
                         <h4 className="font-medium text-gray-900 leading-tight mb-1">
                             <Link
                                 href="/blog/marketing-automation-small-business"
-                                className="hover:text-purple-600 transition-colors"
+                                className="hover:text-blue-600 transition-colors"
                             >
                                 Marketing Automation for Small Businesses: A Beginner's Guide
                             </Link>
