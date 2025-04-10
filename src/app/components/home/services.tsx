@@ -75,7 +75,7 @@ const ServicesSection: React.FC = () => {
     <section className="py-24  bg-blue-50/100 border-b-2 border-blue-200" id="services">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-20 opacity-0 animate-fade-in">
-          <span className="text-blue-500 font-bold uppercase  text-4xl md:text-5xl bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent ">Services we Provide</span>
+          <h3 className="text-blue-500 font-bold uppercase  text-4xl md:text-5xl bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent ">Services we Provide</h3>
           {/* <h2 className="font-bold mb-6 bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent">
             Transforming Businesses Digitally
           </h2>

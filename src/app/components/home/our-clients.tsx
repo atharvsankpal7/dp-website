@@ -200,10 +200,10 @@ const OurClientComponents = () => {
             Join hundreds of businesses that have achieved remarkable growth through our digital solutions.
           </p>
         </div> */}
-        <div className="text-center mb-16">
-          {/* <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block">
+        {/* <div className="text-center mb-16">
+          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block">
             Best Service
-          </span> */}
+          </span> 
           <h2 className="text-blue-500 font-bold uppercase  text-4xl md:text-5xl bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent ">
             
             Our Happy Clients
@@ -211,9 +211,10 @@ const OurClientComponents = () => {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Hear from the people who have experienced our services firsthand.
           </p>
-        </div>
+        </div> 
+        */}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {statisticsData.map((stat, index) => (
             <div
               key={index}
@@ -236,17 +237,19 @@ const OurClientComponents = () => {
               <p className="text-gray-600">{stat.description}</p>
             </div>
           ))}
-        </div>
+        </div> */}
 
         <div className="mb-16">
           <h2
             className="text-3xl md:text-4xl font-bold mb-10 text-center"
             id="el-ybnzq211"
           >
-            <span className="text-gray-500">What Our Clients Say</span>
+            <span className="text-blue-500 font-bold uppercase  text-4xl md:text-5xl bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent ">
+              What Our Clients Say
+            </span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
             {successStoriesData.map((story, index) => (
               <SuccessStoryCard key={index} {...story} />
             ))}
@@ -254,12 +257,14 @@ const OurClientComponents = () => {
         </div>
 
         <div id="el-tjd3j9c2" className="mb-16">
-          <h2
+          <div
             className="text-3xl md:text-4xl font-bold mb-6 text-center"
             id="el-ybnzq211"
           >
-            <span className="text-gray-500">Satisfied Clients</span>
-          </h2>
+            <h3 className="text-blue-500 font-bold uppercase  text-4xl md:text-5xl bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent  ">
+              Satisfied Clients
+            </h3>
+          </div>
 
           {/* Logo carousel container */}
           <div className="overflow-hidden relative">
@@ -305,7 +310,7 @@ const OurClientComponents = () => {
           </div>
         </div>
 
-        <div className="mt-16 text-center" id="el-2rb2hq7b">
+        {/* <div className="mt-16 text-center" id="el-2rb2hq7b">
           <h3
             className="text-2xl font-bold text-gray-900 mb-4"
             id="el-msghaojl"
@@ -323,7 +328,7 @@ const OurClientComponents = () => {
           >
             Get Started Today
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );
