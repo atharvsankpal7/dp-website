@@ -1,7 +1,6 @@
 import React from 'react';
 import { TrendingUp, Mail, Globe2, Palette, Film, Phone, Mic, Share2, BarChart3 } from 'lucide-react';
 import ServiceCard from './services-card';
-import { linkPage } from 'fs';
 
 
 const servicesData = [
