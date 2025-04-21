@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="#" className="text-2xl font-bold">
+            <a href="/" className="text-2xl font-bold">
               <span className="flex items-center">
                 <span className="gradient-text">{brandName}</span>
               </span>
