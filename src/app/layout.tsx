@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import { Sora, DM_Sans } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 import ChatBotPopoverComponent from "./components/chatbot-popover";
 import WhatsAppPopoverComponent from "./components/whatsapp-popover";
+
+export const playwrite = localFont({
+  src: '../../public/Fonts/static/PlaywriteRO-Regular.ttf',
+  variable: '--font-playwrite'
+});
 
 const sora = Sora({
   variable: "--font-sora",
@@ -28,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sora.variable} ${dmSans.variable} antialiased`}>
+      <body className={`${sora.variable} ${dmSans.variable} ${playwrite.variable} antialiased`}>
         {children}
         <ChatBotPopoverComponent />
         <WhatsAppPopoverComponent />
