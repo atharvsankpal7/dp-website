@@ -19,6 +19,7 @@ const SuccessStoryCard: React.FC<SuccessStoryCardProps> = ({
   return (
     <div className="group relative bg-gradient-to-br from-blue-50/50 to-blue-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-blue-100/30" id="about">
       {/* Decorative elements */}
+       
       <div className="absolute top-0 right-0 w-40 h-40 bg-blue-100 rounded-full filter blur-3xl opacity-20 -mr-20 -mt-20 group-hover:opacity-30 transition-opacity duration-500"></div>
       <div className="absolute bottom-0 left-0 w-40 h-40 bg-blue-200 rounded-full filter blur-3xl opacity-20 -ml-20 -mb-20 group-hover:opacity-30 transition-opacity duration-500"></div>
       

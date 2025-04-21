@@ -1,6 +1,7 @@
 import React from 'react';
 import { TrendingUp, Mail, Globe2, Palette, Film, Phone, Mic, Share2, BarChart3 } from 'lucide-react';
 import ServiceCard from './services-card';
+import { linkPage } from 'fs';
 
 
 const servicesData = [
@@ -9,7 +10,8 @@ const servicesData = [
     title: 'WhatsApp Promotion',
     description: 'Strategic WhatsApp marketing campaigns that leverage direct messaging to build personal connections with your audience, driving engagement and conversions through targeted content delivery.',
     services: ['Broadcast Messaging', 'Customer Engagement Automation', 'Performance Tracking & Analytics'],
-    accentColor: 'primary' as const
+    accentColor: 'primary' as const,
+    linkPage:'whatsapp-promotion'
   }
   ,
   {
@@ -17,56 +19,64 @@ const servicesData = [
     title: 'Email Marketing',
     description: 'Develop and execute sophisticated email campaigns with personalized content, A/B testing, and analytics to nurture leads and maintain strong customer relationships.',
     services: ['Campaign Strategy', 'List Management', 'Performance Analytics'],
-    accentColor: 'secondary' as const
+    accentColor: 'secondary' as const,
+    linkPage:'email-marketing'
   },
   {
     icon: <Globe2 className="h-6 w-6 text-blue-600" />,
     title: 'Web + APP Development',
     description: 'Create stunning, responsive websites and mobile applications that combine cutting-edge technology with intuitive user experience design.',
     services: ['Custom Development', 'UI/UX Design', 'Mobile-First Approach'],
-    accentColor: 'primary' as const
+    accentColor: 'primary' as const,
+    linkPage:'development'
   },
   {
     icon: <Palette className="h-6 w-6 text-blue-600" />,
     title: 'Graphic Design',
     description: 'Transform your brand vision into compelling visual stories through professional design services, from logos to complete brand identity systems.',
     services: ['Brand Identity', 'Marketing Materials', 'Social Media Graphics'],
-    accentColor: 'secondary' as const
+    accentColor: 'secondary' as const,
+    linkPage:'graphic-design'
   },
   {
     icon: <Film className="h-6 w-6 text-blue-600" />,
     title: 'Reelography',
     description: 'Create engaging short-form video content optimized for social media platforms, capturing attention and driving engagement through creative storytelling.',
     services: ['Content Strategy', 'Production', 'Platform Optimization'],
-    accentColor: 'primary' as const
+    accentColor: 'primary' as const,
+    linkPage:'reelography'
   },
   {
     icon: <Phone className="h-6 w-6 text-blue-600" />,
     title: 'Bulk Call & SMS',
     description: 'Streamlined mass communication solutions for efficient customer outreach, perfect for promotions, alerts, and time-sensitive announcements.',
     services: ['Campaign Planning', 'Analytics', 'Response Tracking'],
-    accentColor: 'secondary' as const
+    accentColor: 'secondary' as const,
+    linkPage:'bulk-call-sms'
   },
   {
     icon: <Mic className="h-6 w-6 text-blue-600" />,
     title: 'Audio Ads',
     description: 'Professional audio advertising solutions for digital platforms and streaming services, designed to capture attention and drive brand recognition.',
     services: ['Script Writing', 'Voice Production', 'Platform Distribution'],
-    accentColor: 'primary' as const
+    accentColor: 'primary' as const,
+    linkPage:'audio-ads'
   },
   {
     icon: <Share2 className="h-6 w-6 text-blue-600" />,
     title: 'Social Media Marketing',
     description: 'Comprehensive social media strategies that build brand awareness, engage audiences, and drive meaningful connections across platforms.',
     services: ['Content Strategy', 'Community Management', 'Paid Campaigns'],
-    accentColor: 'secondary' as const
+    accentColor: 'secondary' as const,
+    linkPage:'social-media-marketing'
   },
   {
     icon: <BarChart3 className="h-6 w-6 text-blue-600" />,
     title: 'Digital Marketing',
     description: 'Data-driven digital marketing strategies that combine SEO, PPC, and content marketing to enhance your online presence and drive measurable results.',
     services: ['SEO Optimization', 'PPC Management', 'Analytics'],
-    accentColor: 'primary' as const
+    accentColor: 'primary' as const,
+    linkPage:'digital-marketing'
   }
 ];
 
