@@ -1,6 +1,6 @@
 import React from "react";
 
-interface Props {}
+interface Props { }
 
 const FooterComponent = () => {
   return (
@@ -17,10 +17,10 @@ const FooterComponent = () => {
               <a href="#" className="text-2xl font-bold" id="el-z6fwc5hh">
                 <span className="flex items-center" id="el-r5r9e4jw">
                   <span className="mr-2" id="el-1cle9rj8">
-                    DP
+                    Display
                   </span>
                   <span className="text-orange-500" id="el-n3p6xbmj">
-                    Digital
+                    Promotion
                   </span>
                 </span>
               </a>
@@ -144,7 +144,7 @@ const FooterComponent = () => {
                   className="text-gray-400 hover:text-white transition duration-300"
                   id="el-d1y6a46t"
                 >
-                  Digital Marketing
+                  Website Design & Development
                 </a>
               </li>
               <li id="el-zdjx0zkb">
@@ -153,7 +153,7 @@ const FooterComponent = () => {
                   className="text-gray-400 hover:text-white transition duration-300"
                   id="el-is19lup9"
                 >
-                  SEO
+                  Web App & Mobile App Development
                 </a>
               </li>
               <li id="el-uijr3yu2">
@@ -162,7 +162,7 @@ const FooterComponent = () => {
                   className="text-gray-400 hover:text-white transition duration-300"
                   id="el-mtu93ual"
                 >
-                  Social Media Management
+                  Content Creation
                 </a>
               </li>
               <li id="el-mxmq0o6w">
@@ -171,34 +171,16 @@ const FooterComponent = () => {
                   className="text-gray-400 hover:text-white transition duration-300"
                   id="el-5skjpe77"
                 >
-                  Content Creation
+                  Digital Marketing
                 </a>
               </li>
-              <li id="el-6yzyfsjy">
+              <li id="el-uijr3yu2">
                 <a
                   href="#"
                   className="text-gray-400 hover:text-white transition duration-300"
-                  id="el-jo6s3dwr"
+                  id="el-mtu93ual"
                 >
-                  PPC Advertising
-                </a>
-              </li>
-              <li id="el-hifk2qi4">
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition duration-300"
-                  id="el-x819as3j"
-                >
-                  Email Marketing
-                </a>
-              </li>
-              <li id="el-dba6jj6n">
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition duration-300"
-                  id="el-4muk028a"
-                >
-                  Analytics &amp; Reporting
+                  Social Media Marketing
                 </a>
               </li>
             </ul>
