@@ -51,7 +51,6 @@ const ServicesGrid: React.FC = () => {
                         <ServiceCard
                             {...servicesData[0]}
                             className="h-full opacity-0 animate-fade-in"
-                            style={{ animationDelay: "100ms" }}
                         />
 
                         {/* Second column - stacked cards */}
@@ -59,12 +58,10 @@ const ServicesGrid: React.FC = () => {
                             <ServiceCard
                                 {...servicesData[1]}
                                 className="h-full opacity-0 animate-fade-in"
-                                style={{ animationDelay: "200ms" }}
                             />
                             <ServiceCard
                                 {...servicesData[2]}
                                 className="h-full opacity-0 animate-fade-in"
-                                style={{ animationDelay: "300ms" }}
                             />
                         </div>
 
@@ -72,7 +69,6 @@ const ServicesGrid: React.FC = () => {
                         <ServiceCard
                             {...servicesData[3]}
                             className="h-full opacity-0 animate-fade-in"
-                            style={{ animationDelay: "400ms" }}
                         />
                     </div>
 

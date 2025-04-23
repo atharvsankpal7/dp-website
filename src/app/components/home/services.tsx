@@ -70,7 +70,7 @@ const ServicesSection: React.FC = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* <ServiceCard {...service} />   */}
-              <ServicesGrid {...service}/>
+              <ServicesGrid />
             </div>
           ))}
         </div>
