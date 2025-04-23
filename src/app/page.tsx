@@ -5,6 +5,7 @@ import ServicesSection from "./components/home/services";
 import OurClientComponents from "./components/home/our-clients";
 import ContactInfoComponent from "./components/home/contact-info";
 import FooterComponent from "./components/footer";
+import ServicesGrid from "./components/home/services-grid";
 
 export default function Home() {
   const navItems = [
@@ -23,7 +24,8 @@ export default function Home() {
     <>
       <Header navItems={navItems} />
       <HeroSection />
-      <ServicesSection />
+      {/* <ServicesSection /> */}
+      <ServicesGrid />
       <OurClientComponents />
       <ContactInfoComponent />
       <FooterComponent />
