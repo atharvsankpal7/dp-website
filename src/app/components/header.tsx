@@ -14,13 +14,15 @@ interface HeaderProps {
   navItems?: NavItem[];
   ctaText?: string;
   ctaLink?: string;
+  logoSrc?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({
-  brandName = 'Display Promotion',
+  brandName = 'DISPLAY PROMOTION',
   navItems = [],
   ctaText = 'Get Started',
-  ctaLink = '#'
+  ctaLink = '#',
+  logoSrc = '/logo.png'
 }) => {
   // State for mobile menu toggle
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -48,7 +50,8 @@ const Header: React.FC<HeaderProps> = ({
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="text-2xl font-bold">
-              <span className="flex items-center">
+              <span className="flex items-center gap-2">
+                <img src={logoSrc} alt={"logo"} className="h-12 w-auto" />
                 <span className="gradient-text">{brandName}</span>
               </span>
             </a>

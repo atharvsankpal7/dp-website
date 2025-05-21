@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Star } from "lucide-react"
 import { playwrite } from "@/app/layout"
+import Spline from "@splinetool/react-spline"
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -16,7 +17,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="bg-white text-gray-900 py-24 md:py-32 overflow-hidden relative min-h-screen flex items-center border-b-2 border-blue-300"
+      className="bg-white text-gray-900 py-24 md:py-32 overflow-hidden relative min-h-screen flex items-center border-b-2 border-blue-300 md:flex-col-reverse"
     >
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-16">
@@ -35,8 +36,8 @@ const HeroSection = () => {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
               <span className="relative inline-block">
-                <span className={`relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 ${playwrite.variable}`}>
-                  Prime Choice
+                <span className={` relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 ${playwrite.variable}`}>
+                  PRIME CHOICE
                 </span>
                 <span className="absolute -bottom-1.5 left-0 w-full h-3 bg-gradient-to-r  opacity-30 rounded"></span>
               </span>{" "}
@@ -109,14 +110,15 @@ const HeroSection = () => {
           >
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
-              <div className="relative">
+              <div className="relative lg:h-[600px]">
                 <Image
                   src="/mascot.png?height=600&width=600"
                   alt="Digital Growth Mascot Character"
                   width={600}
                   height={600}
-                  className="mx-auto max-w-full rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-2xl"
+                  className="mx-auto max-w-full rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-2xl lg:hidden "
                 />
+                <Spline scene="3d/mascot.splinecode" className="hidden lg:block"></Spline>
 
                 <div className="absolute -top-6 -right-6 bg-gradient-to-r from-blue-600 to-blue-800 text-white p-5 rounded-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <div className="flex items-center gap-2">

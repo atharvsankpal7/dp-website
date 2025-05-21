@@ -30,7 +30,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
     <>
       <Header navItems={navItems} />
 
-      <div className="min-h-screen bg-blue-400/50">
+      <div className="min-h-screen bg-[rgb(96,165,250)]">
         <Spline scene={service.scene} className="md:block hidden" />
       </div>
       {/* Hero Section */}

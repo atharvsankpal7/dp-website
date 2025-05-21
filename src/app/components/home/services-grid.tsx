@@ -9,28 +9,34 @@ const servicesData = [
         linkPage: "development",
     },
     {
-        title: "Web App & Mobile App Development",
+        title: "Graphics Design",
         image: "/services/graphic-design-hero.png",
         accentColor: "secondary" as const,
         linkPage: "development",
     },
     {
         title: "Content Creation",
-        image: "/services/whatsapp-hero.png",
+        image: "/services/content-creation-hero.png", // Changed to a different image
         accentColor: "tertiary" as const,
         linkPage: "graphic-design",
     },
     {
-        title: "Digital Marketing",
+        title: "Reelography",
         image: "/services/reelography-hero.png",
         accentColor: "quaternary" as const,
-        linkPage: "digital-marketing",
+        linkPage: "reelography",
     },
     {
         title: "Social Media Marketing",
         image: "/services/social-marketing-hero.png",
         accentColor: "primary" as const,
         linkPage: "social-media-marketing",
+    },
+    {
+        title: "WhatsApp Promotion",
+        image: "/services/whatsapp-hero.png", // Using the former Content Creation image
+        accentColor: "secondary" as const,
+        linkPage: "whatsapp-promotion",
     },
 ]
 
@@ -72,9 +78,14 @@ const ServicesGrid: React.FC = () => {
                         />
                     </div>
 
-                    {/* Bottom row - full width card */}
-                    <div className="h-[300px] opacity-0 animate-fade-in" style={{ animationDelay: "500ms" }}>
-                        <ServiceCard {...servicesData[4]} className="h-full" />
+                    {/* Bottom row - two cards side by side */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-[300px]">
+                        <div className="opacity-0 animate-fade-in" style={{ animationDelay: "500ms" }}>
+                            <ServiceCard {...servicesData[4]} className="h-full" />
+                        </div>
+                        <div className="opacity-0 animate-fade-in" style={{ animationDelay: "550ms" }}>
+                            <ServiceCard {...servicesData[5]} className="h-full" />
+                        </div>
                     </div>
                 </div>
 
@@ -83,7 +94,7 @@ const ServicesGrid: React.FC = () => {
                     className="mt-20 rounded-2xl p-10 md:p-12 shadow-soft opacity-0 animate-fade-in border-2 border-blue-400/100"
                     style={{ animationDelay: "600ms" }}
                 >
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         <div className="text-center md:text-left">
                             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Ready to Transform Your Business?</h3>
                             <p className="text-lg text-gray-600">Let's create a customized strategy that drives real results.</p>

@@ -380,7 +380,7 @@ export const services = {
     description:
       "Build and maintain a strong social media presence that engages your audience and drives meaningful business results.",
     hero: "/services/social-marketing-hero.png",
-    scene: "/3d/design.splinecode",
+    scene: "/3d/social.splinecode",
     benefits: [
       "Increased brand awareness",
       "Enhanced engagement",
