@@ -1,45 +1,62 @@
-import type React from "react"
-import Link from "next/link"
+"use client";
+
+import { type FC } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 interface ServiceCardProps {
-  title: string
-  image: string
-  accentColor: "primary" | "secondary" | "tertiary" | "quaternary"
-  linkPage: string
-  className?: string
+  title: string;
+  image: string;
+  linkPage: string;
+  className?: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, image, accentColor, linkPage, className = "" }) => {
-  // Map accent colors to their respective hover colors
-  const hoverColorMap = {
-    primary: "group-hover:text-blue-600",
-    secondary: "group-hover:text-purple-600",
-    tertiary: "group-hover:text-sky-600",
-    quaternary: "group-hover:text-emerald-600",
-  }
-
+const ServiceCard: FC<ServiceCardProps> = ({
+  title,
+  image,
+  linkPage,
+  className = "",
+}) => {
   return (
-    <Link href={`/services/${linkPage}`} className={`group ${className}`}>
-      <div className="relative h-full w-full overflow-hidden rounded-lg transition-all duration-500">
-        {/* Image with grayscale filter that removes on hover */}
-        <div className="absolute inset-0 h-full w-full">
-          <img
-            src={image || "/placeholder.svg"}
-            alt={title}
-            className="h-full w-full object-cover transition-all duration-700 filter grayscale group-hover:grayscale-0"
-          />
-          <div className="absolute inset-0 bg-black/40 transition-opacity duration-500 group-hover:bg-black/20"></div>
-        </div>
+    <div className={`group relative h-64 w-full overflow-visible ${className} `}>
+      <Link href={`/services/${linkPage}`} className="block h-full w-full">
+        <div className="relative flex h-full w-full flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-300 hover:shadow-lg">
+          {/* Card content container */}
+          <div className="relative flex h-full w-full flex-col overflow-hidden">
+            {/* Image container with gradient overlay */}
+            <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-blue-400/50 opacity-40 transition-opacity duration-300 group-hover:opacity-80 " />
 
-        {/* Title overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 transition-all duration-500">
-          <h3 className={`text-xl font-bold text-white transition-all duration-500 ${hoverColorMap[accentColor]}`}>
-            {title}
-          </h3>
-        </div>
-      </div>
-    </Link>
-  )
-}
+            {/* Image with hover effect */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src={image || "/placeholder.svg"}
+                alt={title}
+                fill
+                className="object-contain transition-all duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
 
-export default ServiceCard
+            {/* Content overlay */}
+            <div className="relative z-10 mt-auto p-5 text-blue-800 opacity-45 transition-all duration-300 group-hover:opacity-100 bg-white/50 backdrop-blur-sm">
+              <div className="flex items-end justify-between">
+                <h3 className="text-xl font-bold tracking-tight transition-transform duration-300 group-hover:translate-x-1">
+                  {title}
+                </h3>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-blue-500 group-hover:translate-x-1">
+                  <ArrowUpRight className="h-4 w-4" />
+                </span>
+              </div>
+
+              {/* Animated underline */}
+              <div className="mt-2 h-0.5 w-0 bg-blue-500 transition-all duration-300 group-hover:w-1/2" />
+            </div>
+          </div>
+        </div>
+      </Link>
+    </div>
+  );
+};
+
+export default ServiceCard;

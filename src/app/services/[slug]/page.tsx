@@ -4,8 +4,8 @@ import Header from "@/app/components/header";
 import FooterComponent from "@/app/components/footer";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { services } from "@/app/constants/services";
+import Spline from "@splinetool/react-spline/next";
 // Service data
-
 
 export default function ServicePage({ params }: { params: { slug: string } }) {
   const service = services[params.slug as keyof typeof services];
@@ -30,6 +30,9 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
     <>
       <Header navItems={navItems} />
 
+      <div className="min-h-screen bg-blue-400/50">
+        <Spline scene={service.scene} className="md:block hidden" />
+      </div>
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
@@ -48,7 +51,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
                 Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
-            </div> 
+            </div>
             <div className="w-full md:w-1/2 relative">
               <div className="aspect-video rounded-xl overflow-hidden">
                 <Image
@@ -56,7 +59,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
                   alt={service.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain hover:scale-105 transition-transform duration-300"
+                  className="object-contain hover:scale-105 transition-transform duration-300 "
                   priority
                   quality={90}
                 />
