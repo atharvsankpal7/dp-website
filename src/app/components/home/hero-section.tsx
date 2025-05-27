@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight, Star } from "lucide-react"
-import { playwrite } from "@/app/layout"
-import Spline from "@splinetool/react-spline"
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Star } from "lucide-react";
+import { playwrite } from "@/app/layout";
+import Spline from "@splinetool/react-spline";
 
 const HeroSection = () => {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   return (
     <section
@@ -24,31 +24,35 @@ const HeroSection = () => {
           {/* Text Content */}
           <div
             className={`w-full md:w-1/2 mb-12 md:mb-0 z-10 transition-all duration-1000 ease-out ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
             }`}
           >
             <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-gradient-to-r from-blue-50 to-blue-50 border border-blue-100">
               <div className="flex items-center">
                 <span className="flex h-2 w-2 rounded-full bg-blue-600 mr-2"></span>
-                <span className="text-sm font-medium text-blue-700">Digital Marketing Experts</span>
+                <span className="text-sm font-medium text-blue-700">
+                  Digital Marketing Experts
+                </span>
               </div>
             </div>
-
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
               <span className="relative inline-block">
-                <span className={` relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 ${playwrite.variable}`}>
+                <span
+                  className={` relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 ${playwrite.variable}`}
+                >
                   PRIME CHOICE
                 </span>
                 <span className="absolute -bottom-1.5 left-0 w-full h-3 bg-gradient-to-r  opacity-30 rounded"></span>
               </span>{" "}
               to Grow Your Profession
             </h1>
-
             <p className="text-lg md:text-xl mb-10 text-gray-600 leading-relaxed max-w-xl">
-              Boost your digital presence with customized strategies that deliver measurable results. Our expert team
-              creates solutions tailored to your business goals.
+              Boost your digital presence with customized strategies that
+              deliver measurable results. Our expert team creates solutions
+              tailored to your business goals.
             </p>
-
             <div className="flex flex-col sm:flex-row gap-5">
               <Link
                 href="#services"
@@ -58,7 +62,8 @@ const HeroSection = () => {
                   Explore Services
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                <div className="absolute inset-0 bg-white/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
               </Link>
 
               <Link
@@ -71,7 +76,6 @@ const HeroSection = () => {
                 </span>
               </Link>
             </div>
-
             <div className="mt-16">
               <p className="font-medium mb-6 text-gray-700 flex items-center text-lg">
                 <Star className="h-5 w-5 text-yellow-500 mr-3" fill="#EAB308" />
@@ -100,12 +104,15 @@ const HeroSection = () => {
                   </div>
                 ))}
               </div>
-            </div>          </div>
+            </div>{" "}
+          </div>
 
           {/* Mascot/Image Content */}
           <div
             className={`w-full md:w-1/2 relative z-10 transition-all duration-1000 ease-out delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
             }`}
           >
             <div className="relative group">
@@ -118,12 +125,21 @@ const HeroSection = () => {
                   height={600}
                   className="mx-auto max-w-full rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-2xl lg:hidden "
                 />
-                <Spline scene="3d/mascot.splinecode" className="hidden lg:block"></Spline>
+                <Spline
+                  scene="3d/mascot.splinecode"
+                  className="hidden lg:block"
+                ></Spline>
 
                 <div className="absolute -top-6 -right-6 bg-gradient-to-r from-blue-600 to-blue-800 text-white p-5 rounded-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <div className="flex items-center gap-2">
                     <div className="bg-white/20 p-2 rounded-lg">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
                         <path
                           d="M20 6L9 17L4 12"
                           stroke="white"
@@ -134,8 +150,12 @@ const HeroSection = () => {
                       </svg>
                     </div>
                     <div>
-                      <span className="text-2xl font-bold block leading-none">320%</span>
-                      <span className="text-sm font-medium block text-blue-100">Avg. ROI</span>
+                      <span className="text-2xl font-bold block leading-none">
+                        320%
+                      </span>
+                      <span className="text-sm font-medium block text-blue-100">
+                        Avg. ROI
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -143,7 +163,13 @@ const HeroSection = () => {
                 <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   <div className="flex items-center gap-3">
                     <div className="bg-blue-100 p-2 rounded-lg">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
                         <path
                           d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
                           fill="#FFD700"
@@ -155,8 +181,12 @@ const HeroSection = () => {
                       </svg>
                     </div>
                     <div>
-                      <span className="text-xl font-bold block text-gray-900 leading-none">5-Star</span>
-                      <span className="text-sm font-medium block text-gray-500">Rated Agency</span>
+                      <span className="text-xl font-bold block text-gray-900 leading-none">
+                        5-Star
+                      </span>
+                      <span className="text-sm font-medium block text-gray-500">
+                        Rated Agency
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -181,8 +211,7 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
-
+export default HeroSection;

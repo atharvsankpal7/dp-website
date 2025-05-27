@@ -21,7 +21,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
   return (
     <div className={`group relative h-64 w-full overflow-visible ${className} `}>
       <Link href={`/services/${linkPage}`} className="block h-full w-full  ">
-        <div className="relative flex h-full w-full flex-col overflow-hidden rounded-xl border-2 border-blue-400/80 bg-white shadow-sm transition-all duration-300 hover:shadow-lg">
+        <div className="relative flex h-full w-full flex-col overflow-hidden rounded-xl  bg-white shadow-lg transition-all duration-300 hover:shadow-lg">
           {/* Card content container */}
           <div className="relative flex h-full w-full flex-col overflow-hidden">
             {/* Image container with gradient overlay */}

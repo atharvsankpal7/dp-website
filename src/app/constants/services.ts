@@ -221,7 +221,7 @@ export const services = {
     scene: "/3d/reel.splinecode",
     benefits: [
       "Engaging storytelling",
-      "Professional production",
+      "Creative Production",
       "Platform optimization",
       "Trend alignment",
       "Brand consistency",
@@ -234,7 +234,7 @@ export const services = {
           "Develop effective content strategies aligned with your brand goals.",
       },
       {
-        title: "Professional Production",
+        title: "Creative Production",
         description:
           "Create high-quality video content with professional equipment and editing.",
       },
@@ -329,7 +329,7 @@ export const services = {
     scene: "/3d/design.splinecode",
     benefits: [
       "Wide audience reach",
-      "Professional production",
+      "Creative Production",
       "Platform diversity",
       "Targeted placement",
       "Brand voice development",
@@ -342,7 +342,7 @@ export const services = {
           "Create compelling audio scripts that capture attention and drive action.",
       },
       {
-        title: "Professional Production",
+        title: "Creative Production",
         description:
           "High-quality audio production with professional voice talent and sound design.",
       },

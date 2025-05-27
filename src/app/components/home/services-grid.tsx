@@ -12,7 +12,7 @@ const servicesData = [
         title: "Graphics Design",
         image: "/services/graphic-design-hero.png",
         accentColor: "secondary" as const,
-        linkPage: "development",
+        linkPage: "graphic-design",
     },
     {
         title: "Content Creation",
