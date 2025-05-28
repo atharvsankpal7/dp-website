@@ -19,7 +19,7 @@ const servicesData = [
     title: "Content Creation",
     image: "/services/content-creation-hero.png",
     accentColor: "tertiary" as const,
-    linkPage: "graphic-design",
+    linkPage: "content-creation",
   },
   {
     title: "Reelography",

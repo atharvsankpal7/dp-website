@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -32,12 +32,30 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       <Header navItems={navItems} />
 
       {/* 3D Spline Hero Section */}
-      <div className="min-h-screen bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 md:block hidden relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-t from-blue-500 via-blue-300 to-blue-500 md:block hidden relative overflow-hidden">
         {/* Dark gradient overlay for depth */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10" />
 
-        {/* 3D Scene */}
-        <Spline scene={service.scene} className="w-1/2" />
+        {/* 3D Scene or Image */}
+        {service?.scene ? (
+          <Spline scene={service.scene} className="w-1/2" />
+        ) : service?.image ? (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="relative w-full h-full max-w-4xl mx-auto">
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-contain object-center"
+                style={{
+                  filter: "drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3))",
+                }}
+              />
+              {/* Subtle vignette effect */}
+              <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-black/20" />
+            </div>
+          </div>
+        ) : null}
 
         {/* Floating Glass Panel */}
         <div className="absolute top-1/2 left-8 transform -translate-y-1/2 z-20 max-w-md">
@@ -266,7 +284,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 relative overflow-hidden my-24">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 opacity-10">
           <div

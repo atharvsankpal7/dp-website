@@ -1,10 +1,61 @@
 export const services = {
+  "content-creation": {
+      title: "Content Creation",
+      description: "Professional content creation services to help your brand tell compelling stories and engage your target audience across all digital platforms.",
+      hero: "/services/content-hero.png",
+      image:"/services/content-creation-service.png",
+      benefits: [
+        "Engaging storytelling",
+        "SEO-optimized content",
+        "Brand voice consistency",
+        "Multi-format content",
+        "Research-backed articles",
+        "Regular content updates"
+      ],
+      features: [
+        {
+          title: "Blog & Article Writing",
+          description: "Well-researched, engaging articles that establish your brand as an industry authority."
+        },
+        {
+          title: "Social Media Content",
+          description: "Platform-specific content that drives engagement and builds community."
+        },
+        {
+          title: "Content Strategy",
+          description: "Comprehensive content planning aligned with your business goals and target audience."
+        }
+      ],
+      gallery: {
+        images: [
+          {
+            src: "/services/content/gallery-1.jpg",
+            alt: "Blog Writing Sample"
+          },
+          {
+            src: "/services/content/gallery-2.jpg",
+            alt: "Social Media Content"
+          },
+          {
+            src: "/services/content/gallery-3.jpg",
+            alt: "Content Calendar"
+          }
+        ],
+        videos: [
+          {
+            src: "https://www.youtube.com/embed/content-creation-demo"
+          }
+        ]
+      }
+    },
+  
   "whatsapp-promotion": {
     title: "WhatsApp Promotion",
     description:
       "Leverage the power of WhatsApp to connect with your audience directly and drive engagement through personalized messaging campaigns.",
     hero: "/services/whatsapp-hero.png",
-    scene: "/3d/design.splinecode",
+    image:"/services/whatsapp-service.png",
+  
     benefits: [
       "Direct customer engagement",
       "Higher open and response rates",
@@ -164,7 +215,7 @@ export const services = {
     description:
       "Transform your brand vision into compelling visual stories through professional design services that capture attention and communicate your message effectively.",
     hero: "/services/graphic-design-hero.png",
-    scene: "/3d/design.splinecode",
+    image:"/services/graphic-design-service.svg",
     benefits: [
       "Professional brand identity",
       "Consistent visual language",

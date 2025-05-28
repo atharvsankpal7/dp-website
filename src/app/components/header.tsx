@@ -72,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({
                               ${
                                 item.type === "primary"
                                   ? "bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200"
-                                  : "text-gray-600 hover:text-blue-500 transition-colors duration-200"
+                                  : "text-gray-800 hover:text-black transition-colors duration-200"
                               }
                             `}
                   >
