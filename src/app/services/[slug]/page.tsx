@@ -1,4 +1,3 @@
-// "use client";
 
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -6,11 +5,15 @@ import Header from "@/app/components/header";
 import FooterComponent from "@/app/components/footer";
 import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
 import { services } from "@/app/constants/services";
-import Spline from "@splinetool/react-spline/next";
+import ClientOnlySpline from "@/app/components/spline";
 
-export default function ServicePage({ params }: { params: { slug: string } }) {
-  const service = services[params.slug as keyof typeof services];
-
+export default async function ServicePage({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }> 
+}) {
+  const { slug } = await params;
+  const service = services[slug as keyof typeof services];
   if (!service) {
     notFound();
   }
@@ -38,7 +41,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 
         {/* 3D Scene or Image */}
         {"scene" in service ? (
-          <Spline scene={service.scene} className="w-1/2" />
+           <ClientOnlySpline scene={service.scene} className="w-1/2" />
         ) : "image" in service ? (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative w-full h-full max-w-4xl mx-auto">

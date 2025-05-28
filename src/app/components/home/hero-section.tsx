@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star } from "lucide-react";
-import { playwrite } from "@/app/layout";
 import Spline from "@splinetool/react-spline";
 
 const HeroSection = () => {
@@ -40,7 +39,7 @@ const HeroSection = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
               <span className="relative inline-block">
                 <span
-                  className={` relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 ${playwrite.variable}`}
+                  className={` relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 `}
                 >
                   PRIME CHOICE
                 </span>

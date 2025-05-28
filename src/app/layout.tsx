@@ -5,7 +5,7 @@ import "./globals.css";
 import ChatBotPopoverComponent from "./components/chatbot-popover";
 import WhatsAppPopoverComponent from "./components/whatsapp-popover";
 
-export const playwrite = localFont({
+const playwrite = localFont({
   src: '../../public/Fonts/static/PlaywriteRO-Regular.ttf',
   variable: '--font-playwrite'
 });
