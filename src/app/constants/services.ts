@@ -2,7 +2,7 @@ export const services = {
   "content-creation": {
       title: "Content Creation",
       description: "Professional content creation services to help your brand tell compelling stories and engage your target audience across all digital platforms.",
-      hero: "/services/content-hero.png",
+      hero: "/services/content-creation-hero.png",
       image:"/services/content-creation-service.png",
       benefits: [
         "Engaging storytelling",
