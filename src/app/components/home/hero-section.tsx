@@ -17,7 +17,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="bg-white text-gray-900 py-24 md:py-32 overflow-hidden relative min-h-screen flex items-center border-b-2 border-blue-300 md:flex-col-reverse"
+      className="bg-white text-gray-900 py-24 md:py-32 overflow-hidden relative min-h-screen flex items-center justify-center border-b-2 border-blue-300 md:flex-col-reverse"
     >
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-16">
@@ -76,7 +76,7 @@ const HeroSection = () => {
                 </span>
               </Link>
             </div>
-            <div className="mt-16">
+            <div className="mt-16 lg:block hidden">
               <p className="font-medium mb-6 text-gray-700 flex items-center text-lg">
                 <Star className="h-5 w-5 text-yellow-500 mr-3" fill="#EAB308" />
                 Trusted by Industry Leaders
@@ -104,7 +104,7 @@ const HeroSection = () => {
                   </div>
                 ))}
               </div>
-            </div>{" "}
+            </div>
           </div>
 
           {/* Mascot/Image Content */}
