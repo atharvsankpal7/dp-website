@@ -37,9 +37,9 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10" />
 
         {/* 3D Scene or Image */}
-        {service?.scene ? (
+        {"scene" in service ? (
           <Spline scene={service.scene} className="w-1/2" />
-        ) : service?.image ? (
+        ) : "image" in service ? (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative w-full h-full max-w-4xl mx-auto">
               <Image
@@ -51,7 +51,6 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
                   filter: "drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3))",
                 }}
               />
-              {/* Subtle vignette effect */}
               <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-black/20" />
             </div>
           </div>
@@ -269,7 +268,9 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
                   >
                     <iframe
                       src={video.src}
-                      title={video.title}
+                      title={
+                        "title" in video ? video.title : `Video ${index + 1}`
+                      }
                       className="w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
