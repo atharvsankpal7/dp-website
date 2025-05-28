@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300  ${
+      className={`fixed w-full z-50 transition-all duration-300   ${
         isScrolled
           ? "bg-white/30 backdrop-blur-md shadow-sm py-4 "
           : "bg-white py-4 "
