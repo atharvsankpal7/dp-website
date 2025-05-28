@@ -6,7 +6,7 @@ const WhatsAppPopoverComponent = () => {
   return (
   <div className="fixed bottom-28 right-8 z-50" id="el-ytvhloom">
     <a
-      href="https://wa.me/+919689433293"
+      href="https://wa.me/+917767808010"
       target='_blank'
       className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300"
       id="el-wdablagm"

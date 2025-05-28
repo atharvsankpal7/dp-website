@@ -388,7 +388,7 @@ const ContactInfoComponent = () => {
                   <div className="ml-4">
                     <h4 className="text-lg font-semibold">Phone</h4>
                     <Link
-                      href="tel:+919689433293"
+                      href="tel:+917767808010"
                       className="mt-1 text-blue-100 hover:text-white transition-colors duration-200 block"
                     >
                       +91 9689 433 293

@@ -41,7 +41,7 @@ export default async function ServicePage({
 
         {/* 3D Scene or Image */}
         {"scene" in service ? (
-           <ClientOnlySpline scene={service.scene} className="w-1/2" />
+           <ClientOnlySpline scene={service.scene} className="w-full h-full" />
         ) : "image" in service ? (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative w-full h-full max-w-4xl mx-auto">

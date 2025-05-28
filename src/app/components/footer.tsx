@@ -153,7 +153,7 @@ const FooterComponent = () => {
                 <div className="text-sm lg:text-base">
                   <p className="font-medium text-white mb-1">Call Us</p>
                   <Link
-                    href="tel:+919689433293"
+                    href="tel:+917767808010"
                     className="hover:text-green-400 transition-colors duration-300"
                   >
                     +91 9689 433 293
@@ -180,7 +180,7 @@ const FooterComponent = () => {
 
             {/* WhatsApp CTA - Enhanced */}
             <Link
-              href="https://wa.me/+919689433293"
+              href="https://wa.me/+917767808010"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 text-sm lg:text-base font-medium"
