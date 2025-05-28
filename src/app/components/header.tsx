@@ -46,14 +46,14 @@ const Header: React.FC<HeaderProps> = ({
       className={`fixed w-full z-50 transition-all duration-300  ${
         isScrolled
           ? "bg-white/30 backdrop-blur-md shadow-sm py-4 "
-          : "bg-transparent py-6 "
+          : "bg-white py-4 "
       }`}
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold">
+            <a href="/" className="md:text-2xl text-base  font-bold">
               <span className="flex items-center gap-2">
                 <img src={logoSrc} alt={"logo"} className="h-12 w-auto" />
                 <span className="gradient-text">{brandName}</span>
@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Mobile Navigation Button */}
-          <div className="md:hidden">
+          <div className="md:hidden bg-white">
             <button
               onClick={toggleMobileMenu}
               className="text-gray-600 hover:text-primary focus:outline-none transition-colors duration-200"
@@ -111,7 +111,7 @@ const Header: React.FC<HeaderProps> = ({
         {/* Mobile Menu */}
         <div
           className={`md:hidden transition-all duration-300 ease-in-out ${
-            isMobileMenuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
+            isMobileMenuOpen ? "max-h-96 opacity-100 mt-4 bg-white" : "max-h-0 opacity-0"
           } overflow-hidden`}
         >
           <div className="py-4 border-t border-gray-100">
