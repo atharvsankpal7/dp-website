@@ -1,0 +1,132 @@
+const clientLogos = [
+  {
+    id: "el-pcfjrb5l",
+    src: "/logos/aa_logo.PNG",
+    alt: "AA Logo",
+    name: "AA",
+  },
+  {
+    id: "el-chxvdpts",
+    src: "/logos/bhm_logo.PNG",
+    alt: "BHM Logo",
+    name: "BHM",
+  },
+  {
+    id: "el-gkcaw5fq",
+    src: "/logos/bpm_logo.png",
+    alt: "BPM Logo",
+    name: "BPM",
+  },
+  {
+    id: "el-m7nq2t1e",
+    src: "/logos/bsf_logo.png",
+    alt: "BSF Logo",
+    name: "BSF",
+  },
+  {
+    id: "el-y07kt2po",
+    src: "/logos/btc_logo.JPG",
+    alt: "BTC Logo",
+    name: "BTC",
+  },
+  { id: "el-1kjh23sd", src: "/logos/DA.PNG", alt: "DA Logo", name: "DA" },
+  {
+    id: "el-2lkjh34d",
+    src: "/logos/GA_logo.PNG",
+    alt: "GA Logo",
+    name: "GA",
+  },
+  {
+    id: "el-3mnbv45f",
+    src: "/logos/kmart_logo.png",
+    alt: "KMart Logo",
+    name: "KMart",
+  },
+  {
+    id: "el-4poi56gh",
+    src: "/logos/ksa_logo.png",
+    alt: "KSA Logo",
+    name: "KSA",
+  },
+  {
+    id: "el-5qwe67hj",
+    src: "/logos/kv_logo.png",
+    alt: "KV Logo",
+    name: "KV",
+  },
+  {
+    id: "el-6rty78kl",
+    src: "/logos/lakshmiban_logo.png",
+    alt: "Lakshmiban Logo",
+    name: "Lakshmiban",
+  },
+  {
+    id: "el-7uio89zx",
+    src: "/logos/mbm_logo.png",
+    alt: "MBM Logo",
+    name: "MBM",
+  },
+  {
+    id: "el-8pas90cv",
+    src: "/logos/mm_logo.JPG",
+    alt: "MM Logo",
+    name: "MM",
+  },
+  {
+    id: "el-9lkj12mn",
+    src: "/logos/mota_logo.PNG",
+    alt: "Mota Logo",
+    name: "Mota",
+  },
+  {
+    id: "el-0qaz23ws",
+    src: "/logos/muktai_logo.png",
+    alt: "Muktai Logo",
+    name: "Muktai",
+  },
+  {
+    id: "el-1wsx34ed",
+    src: "/logos/sakal_vidya_expo_logo.jpg",
+    alt: "Sakal Vidya Logo",
+    name: "Sakal Vidya",
+  },
+  {
+    id: "el-2edc45rf",
+    src: "/logos/sbg_logo.png",
+    alt: "SBG Logo",
+    name: "SBG",
+  },
+  {
+    id: "el-3rfv56tg",
+    src: "/logos/shivjal_logo.png",
+    alt: "Shivjal Logo",
+    name: "Shivjal",
+  },
+  {
+    id: "el-4tgb67yh",
+    src: "/logos/sl_logo.png",
+    alt: "SI Logo",
+    name: "SI",
+  },
+  {
+    id: "el-5yhn78uj",
+    src: "/logos/sky_foundation_logo.png",
+    alt: "Sky Foundation Logo",
+    name: "Sky Foundation",
+  },
+  { id: "el-6ujm89ik", src: "/logos/ss_logo.JPG", alt: "SS Logo", name: "SS" },
+  {
+    id: "el-7ikn90ol",
+    src: "/logos/vm_logo.png",
+    alt: "VM Logo",
+    name: "VM",
+  },
+  {
+    id: "el-8olp12aq",
+    src: "/logos/yogiraj.PNG",
+    alt: "Yogiraj Logo",
+    name: "Yogiraj",
+  },
+];
+
+export default clientLogos;

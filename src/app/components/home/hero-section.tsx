@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star } from "lucide-react";
-import Spline from "@splinetool/react-spline";
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -19,8 +18,8 @@ const HeroSection = () => {
       className="bg-white text-gray-900 py-16 md:py-32 overflow-hidden relative min-h-screen flex items-center justify-center border-b-2 border-blue-300 flex-col md:flex-row"
     >
       <div className="container mx-auto px-6 py-8">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          {/* Mascot/Image Content - Moved to top on mobile */}
+        <div className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16">
+          {/* Mascot/Image Content */}
           <div
             className={`w-full md:w-1/2 relative z-10 transition-all duration-1000 ease-out delay-300 order-first md:order-none ${
               isVisible
@@ -166,21 +165,30 @@ const HeroSection = () => {
               </p>
               <div className="flex flex-wrap gap-8 items-center">
                 {[
-                  { name: "Shivjal", logo: "/logo2.png" },
-                  { name: "Muktai Textile", logo: "/logo5.png" },
-                  { name: "KMart", logo: "/logo4.png" },
+                  {
+                    name: "Sakal Vidya Expo",
+                    logo: "/logos/sakal_vidya_expo_logo.jpg",
+                  },
+                  {
+                    name: "Baramati Sports Foundation",
+                    logo: "/logos/bsf_logo.png",
+                  },
+                  {
+                    name: "Samarth Business Group",
+                    logo: "/logos/sbg_logo.png",
+                  },
                 ].map((brand, index) => (
                   <div
                     key={index}
-                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-blue-100/70 group"
+                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-blue-100/70 group w-48 h-32 flex items-center justify-center"
                   >
-                    <div className="relative">
+                    <div className="relative w-full h-full flex items-center justify-center">
                       <Image
                         src={brand.logo || "/placeholder.svg"}
                         alt={brand.name}
-                        width={100}
-                        height={35}
-                        className="opacity-75 group-hover:opacity-100 transition-all duration-300 filter group-hover:brightness-110"
+                        width={120} 
+                        height={60}
+                        className="opacity-75 group-hover:opacity-100 transition-all duration-300 filter group-hover:brightness-110 object-contain w-full h-full" 
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-50/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>

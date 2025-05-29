@@ -1,4 +1,3 @@
-'use client';
 import SplineNext from '@splinetool/react-spline/next';
 
 export default function ClientOnlySpline({ 

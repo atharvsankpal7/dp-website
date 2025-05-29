@@ -1,334 +1,408 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { ClientLogo } from "./client-logo";
 import SuccessStoryCard from "./client/success-story";
-
-type Props = {};
+import clientLogos from "@/app/constants/clients";
 
 const OurClientComponents = () => {
-  const clientLogos = [
-    {
-      id: "el-pcfjrb5l",
-      src: "/logo1.png",
-      alt: "Client Company Logo 1",
-    },
-    {
-      id: "el-chxvdpts",
-      src: "/logo2.png",
-      alt: "Client Company Logo 2",
-    },
-    {
-      id: "el-gkcaw5fq",
-      src: "/logo3.png",
-      alt: "Client Company Logo 3",
-    },
-    {
-      id: "el-m7nq2t1e",
-      src: "/logo4.png",
-      alt: "Client Company Logo 4",
-    },
-    {
-      id: "el-y07kt2po",
-      src: "/logo5.png",
-      alt: "Client Company Logo 5",
-    },
-  ];
-
-  // SVG Icons
-  const HappyClientsIcon = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-10 w-10 text-blue-600"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-      />
-    </svg>
-  );
-
-  const CampaignsIcon = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-10 w-10 text-orange-600"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-      />
-    </svg>
-  );
-
-  const ROIIcon = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-10 w-10 text-green-600"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-      />
-    </svg>
-  );
-
-  const statisticsData = [
-    {
-      icon: <HappyClientsIcon />,
-      number: 500,
-      numberSuffix: "+",
-      title: "Happy Clients",
-      description:
-        "Businesses achieving their digital marketing goals with our strategies.",
-      bgColor: "bg-blue-50",
-      textColor: "text-blue-600",
-    },
-    {
-      icon: <CampaignsIcon />,
-      number: 1250,
-      numberSuffix: "+",
-      title: "Campaigns Delivered",
-      description: "Successful campaigns driving measurable business results.",
-      bgColor: "bg-orange-50",
-      textColor: "text-orange-600",
-    },
-    {
-      icon: <ROIIcon />,
-      number: 320,
-      numberSuffix: "%",
-      title: "Average ROI",
-      description: "Return on investment our clients typically experience.",
-      bgColor: "bg-green-50",
-      textColor: "text-green-600",
-    },
-  ];
-
   const successStoriesData = [
     {
-      logo: "/logo2.png",
+      logo: "/logos/shivjal_logo.png",
       companyName: "Shivjal",
       testimonial:
         "This platform has been instrumental in helping us scale our business. The robust features and reliable performance have exceeded our expectations.",
     },
     {
-      logo: "/logo5.png",
+      logo: "/logos/muktai_logo.png",
       companyName: "Muktai Textile",
       testimonial:
         "Reduced customer acquisition costs by 42% while generating 3x more qualified leads through targeted SEO.",
     },
     {
-      logo: "/logo4.png",
+      logo: "/logos/kmart_logo.png",
       companyName: "KMart",
       testimonial:
         "Achieved 230% growth in lead generation through integrated marketing campaigns and content strategy.",
     },
   ];
 
-  // Create refs for the logo carousel
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [velocity, setVelocity] = useState(0);
+  const [lastX, setLastX] = useState(0);
+  const [lastTime, setLastTime] = useState(0);
+  const animationRef = useRef<number>();
+  const momentumRef = useRef<number>();
 
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+  // Enhanced auto-scroll with smooth animation
+  const animateScroll = useCallback(() => {
+    if (!scrollRef.current || isHovered || isDragging) return;
 
-    let animationFrameId: number;
-    let isHovering = false;
-    let scrollPosition = 0;
-    const scrollSpeed = 0.5;
+    const container = scrollRef.current;
+    const scrollWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
+    const maxScroll = scrollWidth / 2; // Since we duplicate logos
 
-    const animateScroll = () => {
-      if (!scrollContainer || isHovering) return;
+    container.scrollLeft += 0.8; // Slightly faster base speed
 
-      scrollPosition += scrollSpeed;
-      scrollContainer.scrollLeft = scrollPosition;
+    // Seamless loop reset
+    if (container.scrollLeft >= maxScroll) {
+      container.scrollLeft = 0;
+    }
 
-      // Reset when reaching the end of the first set of logos
-      if (scrollPosition >= scrollContainer.scrollWidth / 3) {
-        scrollPosition = 0;
-        scrollContainer.scrollLeft = 0;
+    animationRef.current = requestAnimationFrame(animateScroll);
+  }, [isHovered, isDragging]);
+
+  // Momentum scrolling after drag ends
+  const applyMomentum = useCallback(() => {
+    if (!scrollRef.current || Math.abs(velocity) < 0.1) {
+      setVelocity(0);
+      return;
+    }
+
+    const container = scrollRef.current;
+    container.scrollLeft += velocity;
+
+    // Apply friction
+    const friction = 0.95;
+    setVelocity((prev) => prev * friction);
+
+    // Handle infinite scroll bounds
+    const scrollWidth = container.scrollWidth;
+    const maxScroll = scrollWidth / 2;
+
+    if (container.scrollLeft >= maxScroll) {
+      container.scrollLeft = 0;
+    } else if (container.scrollLeft < 0) {
+      container.scrollLeft = maxScroll - 1;
+    }
+
+    momentumRef.current = requestAnimationFrame(applyMomentum);
+  }, [velocity]);
+
+  // Enhanced mouse/touch handlers
+  const handleStart = useCallback((clientX: number) => {
+    if (!scrollRef.current) return;
+
+    setIsDragging(true);
+    setStartX(clientX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+    setLastX(clientX);
+    setLastTime(Date.now());
+    setVelocity(0);
+
+    // Cancel any ongoing animations
+    if (animationRef.current) {
+      cancelAnimationFrame(animationRef.current);
+    }
+    if (momentumRef.current) {
+      cancelAnimationFrame(momentumRef.current);
+    }
+  }, []);
+
+  const handleMove = useCallback(
+    (clientX: number) => {
+      if (!isDragging || !scrollRef.current) return;
+
+      const container = scrollRef.current;
+      const currentTime = Date.now();
+      const deltaTime = currentTime - lastTime;
+
+      if (deltaTime > 0) {
+        const deltaX = clientX - lastX;
+        setVelocity((deltaX / deltaTime) * 16); // Convert to pixels per frame (60fps)
       }
 
-      animationFrameId = requestAnimationFrame(animateScroll);
-    };
+      const x = clientX - container.offsetLeft;
+      const walk = (x - startX) * 1.5; // Reduced multiplier for better control
+      const newScrollLeft = scrollLeft - walk;
 
-    // Start the animation
-    animationFrameId = requestAnimationFrame(animateScroll);
+      container.scrollLeft = newScrollLeft;
 
-    // Pause animation on hover
-    const handleMouseEnter = () => {
-      isHovering = true;
-    };
+      setLastX(clientX);
+      setLastTime(currentTime);
+    },
+    [isDragging, startX, scrollLeft, lastX, lastTime]
+  );
 
-    const handleMouseLeave = () => {
-      isHovering = false;
-      animationFrameId = requestAnimationFrame(animateScroll);
-    };
+  const handleEnd = useCallback(() => {
+    setIsDragging(false);
 
-    scrollContainer.addEventListener("mouseenter", handleMouseEnter);
-    scrollContainer.addEventListener("mouseleave", handleMouseLeave);
+    // Start momentum scrolling
+    if (Math.abs(velocity) > 1) {
+      momentumRef.current = requestAnimationFrame(applyMomentum);
+    } else {
+      // Resume auto-scroll if not hovered
+      if (!isHovered) {
+        setTimeout(() => {
+          animationRef.current = requestAnimationFrame(animateScroll);
+        }, 500); // Small delay before resuming
+      }
+    }
+  }, [velocity, isHovered, applyMomentum, animateScroll]);
+
+  // Mouse event handlers
+  const handleMouseDown = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      handleStart(e.pageX);
+    },
+    [handleStart]
+  );
+
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      handleMove(e.pageX);
+    },
+    [handleMove]
+  );
+
+  const handleMouseUp = useCallback(() => {
+    handleEnd();
+  }, [handleEnd]);
+
+  const handleMouseLeave = useCallback(() => {
+    if (isDragging) {
+      handleEnd();
+    }
+    setIsHovered(false);
+  }, [isDragging, handleEnd]);
+
+  const handleMouseEnter = useCallback(() => {
+    setIsHovered(true);
+    if (animationRef.current) {
+      cancelAnimationFrame(animationRef.current);
+    }
+  }, []);
+
+  // Touch event handlers
+  const handleTouchStart = useCallback(
+    (e: React.TouchEvent) => {
+      e.preventDefault();
+      handleStart(e.touches[0].pageX);
+    },
+    [handleStart]
+  );
+
+  const handleTouchMove = useCallback(
+    (e: React.TouchEvent) => {
+      e.preventDefault();
+      handleMove(e.touches[0].pageX);
+    },
+    [handleMove]
+  );
+
+  const handleTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      e.preventDefault();
+      handleEnd();
+    },
+    [handleEnd]
+  );
+
+  // Keyboard navigation
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (!scrollRef.current) return;
+
+    const container = scrollRef.current;
+    const scrollAmount = 200;
+
+    switch (e.key) {
+      case "ArrowLeft":
+        e.preventDefault();
+        container.scrollLeft -= scrollAmount;
+        break;
+      case "ArrowRight":
+        e.preventDefault();
+        container.scrollLeft += scrollAmount;
+        break;
+      case " ":
+        e.preventDefault();
+        setIsHovered((prev) => !prev); // Space to pause/resume
+        break;
+    }
+  }, []);
+
+  // Intersection Observer for performance
+  const [isVisible, setIsVisible] = useState(false);
+  const observerRef = useRef<IntersectionObserver>();
+
+  useEffect(() => {
+    if (!scrollRef.current) return;
+
+    observerRef.current = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    observerRef.current.observe(scrollRef.current);
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
-      scrollContainer.removeEventListener("mouseenter", handleMouseEnter);
-      scrollContainer.removeEventListener("mouseleave", handleMouseLeave);
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
     };
   }, []);
 
+  // Main effect for animation and event listeners
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    // Start auto-scroll only when visible
+    if (isVisible && !isHovered && !isDragging) {
+      animationRef.current = requestAnimationFrame(animateScroll);
+    }
+
+    // Add keyboard listeners
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      // Cleanup all animations and listeners
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      if (momentumRef.current) {
+        cancelAnimationFrame(momentumRef.current);
+      }
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isVisible, isHovered, isDragging, animateScroll, handleKeyDown]);
+
   return (
-    <section id="clients" className="py-16 bg-white">
-      <div className="container mx-auto px-4" id="el-fuy4npec">
-        {/* <div className="text-center mb-16" id="el-lbaq7jft">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900" id="el-bpxkowae">
-            Our Happy Clients
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto" id="el-fa16xi3b">
-            Join hundreds of businesses that have achieved remarkable growth through our digital solutions.
-          </p>
-        </div> */}
-        {/* <div className="text-center mb-16">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block">
-            Best Service
-          </span> 
-          <h2 className="text-blue-500 font-bold uppercase  text-4xl md:text-5xl bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent ">
-            
-            Our Happy Clients
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Hear from the people who have experienced our services firsthand.
-          </p>
-        </div> 
-        */}
-
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {statisticsData.map((stat, index) => (
-            <div
-              key={index}
-              className={`${stat.bgColor} rounded-xl p-8 text-center transition-all duration-300 hover:shadow-md`}
-            >
-              <div className="flex justify-center mb-4">
-                <div
-                  className={`rounded-full ${stat.bgColor} p-4 ${stat.textColor}`}
-                >
-                  {stat.icon}
-                </div>
-              </div>
-              <div className={`text-5xl font-bold mb-2 ${stat.textColor}`}>
-                {stat.number}
-                {stat.numberSuffix}
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">
-                {stat.title}
-              </h3>
-              <p className="text-gray-600">{stat.description}</p>
-            </div>
-          ))}
-        </div> */}
-
-        <div className="mb-16">
-          <h2
-            className="text-3xl md:text-4xl font-bold mb-10 text-center"
-            id="el-ybnzq211"
-          >
-            <span className="text-blue-500 font-bold uppercase  text-4xl md:text-5xl bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent ">
+    <section
+      id="clients"
+      className="py-20 bg-gradient-to-b from-white to-gray-50"
+      role="region"
+      aria-label="Client testimonials and logos"
+    >
+      <div className="container mx-auto px-4 max-w-7xl">
+        {/* Testimonials Section */}
+        <div className="mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+            <span className="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
               What Our Clients Say
             </span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {successStoriesData.map((story, index) => (
               <SuccessStoryCard key={index} {...story} />
             ))}
           </div>
         </div>
 
-        <div id="el-tjd3j9c2" className="mb-16">
-          <div
-            className="text-3xl md:text-4xl font-bold mb-6 text-center"
-            id="el-ybnzq211"
-          >
-            <h3 className="text-blue-500 font-bold uppercase  text-4xl md:text-5xl bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent  ">
-              Satisfied Clients
-            </h3>
-          </div>
+        {/* Clients Carousel Section */}
+        <div className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <h3 className="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
+            Our Valued Clients
+          </h3>
+        </div>
 
-          {/* Logo carousel container */}
-          <div className="overflow-hidden relative">
-            <div
-              ref={scrollRef}
-              className="flex items-center space-x-12 py-6 whitespace-nowrap overflow-x-auto scrollbar-hide"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            >
-              {/* First set of logos */}
-              {clientLogos.map((logo) => (
-                <div key={logo.id} className="flex-shrink-0">
-                  <ClientLogo
-                    id={logo.id}
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="w-32 h-32 rounded-full object-contain border-2 border-gray-100 shadow-sm transition-transform"
-                  />
-                </div>
-              ))}
-              {/* Duplicate logos for continuous scrolling */}
-              {clientLogos.map((logo) => (
-                <div key={`dup-${logo.id}`} className="flex-shrink-0">
-                  <ClientLogo
-                    id={`dup-${logo.id}`}
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="w-32 h-32 rounded-full object-contain border-2 border-gray-100 shadow-sm transition-transform"
-                  />
-                </div>
-              ))}
-              {/* Duplicate logos for continuous scrolling */}
-              {clientLogos.map((logo) => (
-                <div key={`dup-${logo.id}`} className="flex-shrink-0">
-                  <ClientLogo
-                    id={`dup-${logo.id}`}
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="w-32 h-32 rounded-full object-contain border-2 border-gray-100 shadow-sm transition-transform"
-                  />
-                </div>
-              ))}
+        {/* Logo carousel container */}
+        <div
+          className="relative group"
+          role="region"
+          aria-label="Client logos carousel"
+        >
+          {/* Pause indicator */}
+          {isHovered && (
+            <div className="absolute top-6 right-6 z-20 bg-black/20 text-white px-4 py-2 rounded-full text-base backdrop-blur-sm">
+              Paused
             </div>
+          )}
+
+          <div
+            ref={scrollRef}
+            className={`
+      flex items-center py-12 md:py-16 lg:py-20 xl:py-24 overflow-x-auto scrollbar-hide 
+      ${isDragging ? "cursor-grabbing select-none" : "cursor-grab"}
+      scroll-smooth focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg
+    `}
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              WebkitOverflowScrolling: "touch",
+            }}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+            onMouseEnter={handleMouseEnter}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            tabIndex={0}
+            role="listbox"
+            aria-label="Client logos"
+          >
+            {[...clientLogos, ...clientLogos].map((logo, index) => (
+              <div
+                key={`${logo.id}-${index}`}
+                className="flex-shrink-0 flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-8 transition-all duration-300 ease-out transform group-hover:opacity-60 hover:!opacity-100 hover:scale-105"
+                role="option"
+                aria-label={logo.alt}
+              >
+                <div
+                  className="
+                  w-16 h-16 
+                  sm:w-24 sm:h-24 
+                  md:w-32 md:h-32 
+                  lg:w-40 lg:h-40 
+                  xl:w-48 xl:h-48 
+                  2xl:w-64 2xl:h-64            
+                            bg-white rounded-xl 
+                            md:rounded-2xl 
+                            lg:rounded-3xl 
+                             md:p-2 lg:p-4 xl:p-6 
+                            flex items-center justify-center 
+                            shadow-md hover:shadow-2xl 
+                            lg:shadow-lg lg:hover:shadow-3xl
+                            border border-gray-100 hover:border-blue-200 
+                            transition-all duration-300 transform hover:-translate-y-2 lg:hover:-translate-y-3
+                            backdrop-blur-sm
+                          "
+                >
+                  <ClientLogo
+                    id={`${logo.id}-${index}`}
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
+                    width={220}
+                    height={220}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* <div className="mt-16 text-center" id="el-2rb2hq7b">
-          <h3
-            className="text-2xl font-bold text-gray-900 mb-4"
-            id="el-msghaojl"
-          >
-            Ready to Join Our Success Stories?
-          </h3>
-          <p className="text-gray-600 mb-8 max-w-3xl mx-auto" id="el-ucut4z9b">
-            Let's discuss how our digital marketing solutions can help your
-            business achieve remarkable growth.
-          </p>
-          <a
-            href="#contact"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-full transition duration-300"
-            id="el-z4ofixwj"
-          >
-            Get Started Today
-          </a>
-        </div> */}
+        {/* Progress indicator */}
+        <div className="flex justify-center mt-6">
+          <div className="w-32 h-1 bg-gray-200 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-blue-500 to-blue-700 rounded-full transition-transform duration-300 ease-out"
+              style={{
+                transform: `translateX(${
+                  scrollRef.current
+                    ? ((scrollRef.current.scrollLeft %
+                        (scrollRef.current.scrollWidth / 2)) /
+                        (scrollRef.current.scrollWidth / 2)) *
+                        100 -
+                      100
+                    : -100
+                }%)`,
+              }}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

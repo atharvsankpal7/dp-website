@@ -15,17 +15,18 @@ export const ClientLogo: React.FC<ClientLogoProps> = ({
   src,
   alt,
   className,
-  width = 120,
-  height = 120,
+  width = 480,
+  height = 480,
 }) => {
   return (
     <div id={id} className="flex items-center justify-center">
       <Image
-        src={src || "/placeholder.svg?height=120&width=120"}
+        src={src || "/placeholder.svg?height=480&width=480"}
         alt={alt}
         width={width}
         height={height}
-        className={className || "w-20 h-20 object-contain"}
+        className={className || "object-contain"}
+        loading="lazy"
       />
     </div>
   );
