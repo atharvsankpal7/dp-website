@@ -6,7 +6,7 @@ import OurClientComponents from "./components/home/our-clients";
 import ContactInfoComponent from "./components/home/contact-info";
 import FooterComponent from "./components/footer";
 import ServicesGrid from "./components/home/services-grid";
-
+import ClientsInfiniteScroll from "./components/home/clients-infinite-scroll";
 export default function Home() {
   const navItems = [
     { label: "Home", href: "#" },
@@ -24,7 +24,6 @@ export default function Home() {
     <>
       <Header navItems={navItems} />
       <HeroSection />
-      {/* <ServicesSection /> */}
       <ServicesGrid />
       <OurClientComponents />
       <ContactInfoComponent />
