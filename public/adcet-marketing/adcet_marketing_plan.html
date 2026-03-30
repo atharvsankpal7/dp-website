@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADCET × Display Promotion — Admission Marketing Plan 2026</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --adcet-navy: #0a1628;
+      --adcet-blue: #1a3a6e;
+      --adcet-gold: #e8a020;
+      --adcet-amber: #f4c842;
+      --dp-orange: #e85d20;
+      --dp-red: #c23b22;
+      --white: #fdfcf8;
+      --off-white: #f5f0e8;
+      --light-grey: #e8e3d8;
+      --text-body: #2a2620;
+      --accent-teal: #1a7a6e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--adcet-navy);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background: #004e52;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 8%;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 40%, rgba(232, 160, 32, 0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 70%, rgba(232, 93, 32, 0.08) 0%, transparent 60%);
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(232, 160, 32, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232, 160, 32, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .collab-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(232, 160, 32, 0.1);
+      border: 1px solid rgba(232, 160, 32, 0.3);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--adcet-gold);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      width: fit-content;
+      animation: fadeSlideDown 0.8s ease both;
+    }
+
+    .collab-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--adcet-gold);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(1.4)
+      }
+    }
+
+    @keyframes fadeSlideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 6vw, 82px);
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 12px;
+      animation: fadeSlideUp 0.9s ease 0.1s both;
+    }
+
+    .hero h1 .gold {
+      color: var(--adcet-gold);
+    }
+
+    .hero h1 .orange {
+      color: var(--dp-orange);
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: rgba(253, 252, 248, 0.6);
+      font-weight: 300;
+      margin-bottom: 48px;
+      max-width: 600px;
+      line-height: 1.6;
+      animation: fadeSlideUp 0.9s ease 0.2s both;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      animation: fadeSlideUp 0.9s ease 0.3s both;
+    }
+
+    .stat-item {
+      text-align: left;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--adcet-gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(253, 252, 248, 0.5);
+      margin-top: 4px;
+    }
+
+    .hero-year-tag {
+      position: absolute;
+      top: 40px;
+      right: 8%;
+      font-family: 'Space Mono', monospace;
+      font-size: 120px;
+      font-weight: 700;
+      color: rgba(232, 160, 32, 0.04);
+      line-height: 1;
+      user-select: none;
+    }
+
+    .partner-strip {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-top: 60px;
+      animation: fadeIn 1s ease 0.5s both;
+    }
+
+    .partner-box {
+      padding: 16px 28px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+    }
+
+    .partner-box:first-child {
+      border-radius: 12px 0 0 12px;
+    }
+
+    .partner-box:last-child {
+      border-radius: 0 12px 12px 0;
+    }
+
+    .partner-box .label {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 4px;
+    }
+
+    .partner-box .name {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--white);
+    }
+
+    .plus-divider {
+      padding: 20px 16px;
+      font-size: 20px;
+      color: var(--adcet-gold);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(232, 160, 32, 0.08);
+    }
+
+    /* ─── SECTIONS ─── */
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--adcet-gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 40px;
+    }
+
+    /* ─── STRENGTHS ─── */
+    .strengths-section {
+      background: var(--off-white);
+      color: var(--text-body);
+    }
+
+    .strengths-section .section-title {
+      color: var(--adcet-navy);
+    }
+
+    .strengths-section .section-label {
+      color: var(--dp-orange);
+    }
+
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      background: var(--light-grey);
+      border: 1px solid var(--light-grey);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .strength-card {
+      background: var(--white);
+      padding: 32px 28px;
+      transition: background 0.2s;
+    }
+
+    .strength-card:hover {
+      background: #fdf8f0;
+    }
+
+    .strength-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--adcet-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .strength-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--adcet-navy);
+      margin-bottom: 8px;
+    }
+
+    .strength-card p {
+      font-size: 13px;
+      color: #5a5040;
+      line-height: 1.6;
+    }
+
+    /* ─── STRATEGY ─── */
+    .strategy-section {
+      background: #004e52;
+    }
+
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media(max-width: 768px) {
+      .strategy-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .strategy-card {
+      border: 2px solid rgba(232, 160, 32, 0.4);
+      border-radius: 16px;
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .strategy-card:hover {
+      border-color: rgba(232, 160, 32, 0.8);
+      transform: translateY(-2px);
+    }
+
+    .strategy-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--adcet-gold), var(--dp-orange));
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .strategy-card:hover::before {
+      opacity: 1;
+    }
+
+    .strategy-card .phase-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--adcet-gold);
+      background: rgba(232, 160, 32, 0.1);
+      border-radius: 4px;
+      padding: 4px 10px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .strategy-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+
+    .strategy-card p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .tactic-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tactic-list li {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.75);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .tactic-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--dp-orange);
+      font-size: 12px;
+    }
+
+    /* ─── SERVICES ─── */
+    .services-section {
+      background: var(--adcet-navy);
+    }
+
+    .services-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media(max-width: 900px) {
+      .services-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .services-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-pill {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 24px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: rgba(255, 255, 255, 0.02);
+      transition: background 0.2s, border-color 0.2s;
+      cursor: default;
+    }
+
+    .service-pill:hover {
+      background: rgba(232, 160, 32, 0.06);
+      border-color: rgba(232, 160, 32, 0.25);
+    }
+
+    .service-icon-wrap {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--adcet-gold), var(--dp-orange));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .service-info h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .service-info p {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.5;
+    }
+
+    /* ─── TIMELINE ─── */
+    .timeline-section {
+      background: linear-gradient(180deg, #0a1628 0%, #121e36 100%);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--adcet-gold), var(--dp-orange), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateX(-10px);
+      animation: slideInLeft 0.5s ease forwards;
+    }
+
+    .timeline-item:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .timeline-item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .timeline-item:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .timeline-item:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .timeline-item:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes slideInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -34px;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--adcet-gold);
+      border: 3px solid var(--adcet-navy);
+      box-shadow: 0 0 12px rgba(232, 160, 32, 0.4);
+    }
+
+    .timeline-month {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--dp-orange);
+      margin-bottom: 6px;
+    }
+
+    .timeline-content {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 22px 24px;
+    }
+
+    .timeline-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.65;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(232, 160, 32, 0.1);
+      border: 1px solid rgba(232, 160, 32, 0.2);
+      color: var(--adcet-gold);
+    }
+
+    /* ─── CHANNELS ─── */
+    .channels-section {
+      background: var(--off-white);
+      color: var(--text-body);
+    }
+
+    .channels-section .section-title {
+      color: var(--adcet-navy);
+    }
+
+    .channels-section .section-label {
+      color: var(--dp-orange);
+    }
+
+    .channel-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--light-grey);
+      font-size: 13px;
+    }
+
+    .channel-table thead {
+      background: var(--adcet-navy);
+      color: var(--white);
+    }
+
+    .channel-table th {
+      padding: 14px 20px;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-align: left;
+    }
+
+    .channel-table tbody tr:nth-child(even) {
+      background: #f8f4ed;
+    }
+
+    .channel-table tbody tr:nth-child(odd) {
+      background: var(--white);
+    }
+
+    .channel-table tbody tr:hover {
+      background: #fdf0d8;
+    }
+
+    .channel-table td {
+      padding: 14px 20px;
+      color: var(--text-body);
+      border-top: 1px solid var(--light-grey);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .channel-table td:first-child {
+      font-weight: 600;
+      color: var(--adcet-blue);
+    }
+
+    .priority-badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .priority-high {
+      background: #fde8d8;
+      color: #c23b22;
+    }
+
+    .priority-mid {
+      background: #fdf3d8;
+      color: #8a6020;
+    }
+
+    .priority-low {
+      background: #d8edf8;
+      color: #1a4a6e;
+    }
+
+    /* ─── KPI ─── */
+    .kpi-section {
+      background: var(--adcet-navy);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .kpi-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 28px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--adcet-gold), var(--dp-orange));
+    }
+
+    .kpi-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--adcet-gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .kpi-metric {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .kpi-desc {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 1.5;
+    }
+
+    /* ─── BUDGET ─── */
+    .budget-section {
+      background: #0d1f3c;
+    }
+
+    .budget-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .budget-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .budget-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    .budget-label-row span:first-child {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 500;
+    }
+
+    .budget-label-row span:last-child {
+      font-family: 'Space Mono', monospace;
+      color: var(--adcet-gold);
+      font-size: 12px;
+    }
+
+    .bar-track {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--adcet-gold), var(--dp-orange));
+      transform-origin: left;
+      animation: barGrow 1.2s ease forwards;
+      transform: scaleX(0);
+    }
+
+    @keyframes barGrow {
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    /* ─── CTA ─── */
+    .cta-section {
+      background: #004e52;
+      padding: 80px 8%;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 52px);
+      color: var(--white);
+      margin-bottom: 16px;
+      font-weight: 900;
+    }
+
+    .cta-section p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 540px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 14px 32px;
+      background: var(--adcet-navy);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: #16233f;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--adcet-navy);
+      border: 2px solid var(--adcet-navy);
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(10, 22, 40, 0.1);
+      transform: translateY(-1px);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--adcet-navy);
+      padding: 40px 8%;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--adcet-gold);
+    }
+
+    footer .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--adcet-gold);
+    }
+
+    footer .footer-copy {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.25);
+      font-family: 'Space Mono', monospace;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin: 0;
+    }
+
+    /* ─── GALLERY ─── */
+    .gallery-section {
+      background: var(--off-white);
+      color: var(--text-body);
+    }
+
+    .gallery-section .section-label {
+      color: var(--dp-orange);
+    }
+
+    .gallery-section .section-title {
+      color: var(--adcet-navy);
+    }
+
+    .gallery-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .gallery-tab {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 6px;
+      border: 1px solid var(--light-grey);
+      background: var(--white);
+      color: #5a5040;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .gallery-tab:hover {
+      border-color: var(--adcet-gold);
+      color: var(--adcet-navy);
+    }
+
+    .gallery-tab.active {
+      background: var(--adcet-navy);
+      color: var(--adcet-gold);
+      border-color: var(--adcet-navy);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media(max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 560px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-tabs {
+        flex-wrap: wrap;
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--light-grey);
+      background: var(--white);
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(10, 22, 40, 0.1);
+      border-color: rgba(232, 160, 32, 0.35);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .gallery-item video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(10, 22, 40, 0.7) 100%);
+      opacity: 0;
+      transition: opacity 0.25s;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+
+    .gallery-item:hover .gallery-item-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item-overlay span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .gallery-item .play-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(10, 22, 40, 0.75);
+      backdrop-filter: blur(6px);
+      border: 2px solid rgba(232, 160, 32, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s, background 0.25s;
+      pointer-events: none;
+    }
+
+    .gallery-item:hover .play-badge {
+      transform: translate(-50%, -50%) scale(1.08);
+      background: rgba(10, 22, 40, 0.9);
+    }
+
+    .play-badge::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 0 8px 14px;
+      border-color: transparent transparent transparent var(--adcet-gold);
+      margin-left: 3px;
+    }
+
+    /* Lightbox */
+    .gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(10, 22, 40, 0.92);
+      backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .gallery-lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .gallery-lightbox-content {
+      max-width: 520px;
+      max-height: 88vh;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    .gallery-lightbox-content img,
+    .gallery-lightbox-content video {
+      display: block;
+      width: 100%;
+      max-height: 88vh;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(10, 22, 40, 0.7);
+      backdrop-filter: blur(6px);
+      color: var(--white);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+      z-index: 10;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(232, 160, 32, 0.2);
+      border-color: var(--adcet-gold);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(10, 22, 40, 0.6);
+      backdrop-filter: blur(6px);
+      color: var(--white);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+      z-index: 10;
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(232, 160, 32, 0.15);
+      border-color: var(--adcet-gold);
+    }
+
+    .lightbox-prev {
+      left: -60px;
+    }
+
+    .lightbox-next {
+      right: -60px;
+    }
+
+    @media(max-width: 700px) {
+      .gallery-lightbox-content {
+        max-width: 92vw;
+      }
+
+      .lightbox-prev {
+        left: 8px;
+      }
+
+      .lightbox-next {
+        right: 8px;
+      }
+    }
+
+    .gallery-counter {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: rgba(253, 252, 248, 0.5);
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 8%;
+      background: rgba(10, 22, 40, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      color: var(--adcet-gold);
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--adcet-gold);
+    }
+
+    @media(max-width:700px) {
+      .nav-links {
+        display: none;
+      }
+
+      .partner-strip {
+        flex-direction: column;
+      }
+
+      .partner-box:first-child,
+      .partner-box:last-child {
+        border-radius: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <div class="hero" id="overview">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-year-tag">2026</div>
+
+    <div class="collab-badge">
+      <span class="dot"></span>
+      Admission Marketing Plan — AY 2026–27
+    </div>
+
+    <h1>
+      Engineering<br>
+      <span class="gold">Admissions</span> at<br>
+      <span class="orange">Scale.</span>
+    </h1>
+
+    <p class="hero-sub">
+      A full-funnel digital marketing collaboration between <strong>ADCET, Ashta</strong> — NAAC A++ Autonomous
+      Engineering College — and <strong>Display Promotion</strong>, Baramati's prime digital growth agency.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">NAAC</div>
+        <div class="stat-label">A++ Accredited</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">12+</div>
+        <div class="stat-label">B.Tech / M.Tech Programs</div>
+      </div>
+
+    </div>
+
+    <div class="partner-strip">
+      <div class="partner-box">
+        <div class="label">Engineering Institution</div>
+        <div class="name">Annasaheb Dange College of Engineering & Technology</div>
+      </div>
+      <div class="plus-divider">+</div>
+      <div class="partner-box">
+        <div class="label">Digital Marketing Partner</div>
+        <div class="name">Display Promotion — Baramati, Maharashtra</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRENGTHS -->
+  <section class="strengths-section" id="strengths">
+    <div class="section-label">Why ADCET Stands Out</div>
+    <h2 class="section-title" style="color: var(--adcet-navy);">Institutional Strengths<br>to Amplify</h2>
+
+    <div class="strengths-grid">
+      <div class="strength-card">
+        <div class="strength-icon">🏆</div>
+        <h3>NAAC A++ Grade</h3>
+        <p>One of the highest-rated engineering institutes in Western Maharashtra — a powerful credibility signal for
+          aspiring students and parents.</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">⚙️</div>
+        <h3>Autonomous Institute</h3>
+        <p>Affiliated to Shivaji University, AICTE-approved, ISO 9001:2015 certified, with NBA-accredited programs for
+          added academic credibility.</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">🤖</div>
+        <h3>Future-Ready Programs</h3>
+        <p>AI & Data Science, Robotics & AI, IoT & Cybersecurity, Aeronautical Engineering — cutting-edge branches
+          attracting premium talent.</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">💼</div>
+        <h3>Strong Placement Record</h3>
+        <p>Capgemini, and top-tier recruiters visiting campus. Average package of 4 LPA with a high of 40 LPA — a
+          compelling story to tell.</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">🌍</div>
+        <h3>Strategic Location</h3>
+        <p>Located in Ashta, Sangli — a hub connecting students from Sangli, Kolhapur, Satara, Solapur and the entire
+          western Maharashtra belt.</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-icon">🔬</div>
+        <h3>Research & Innovation</h3>
+        <p>AICTE IDEA Lab, funded R&D projects, industry interaction cell and an active IIC — a holistic ecosystem for
+          innovators.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGY -->
+  <section class="strategy-section" id="strategy">
+    <div class="section-label">Campaign Architecture</div>
+    <h2 class="section-title">4-Phase Marketing<br>Strategy</h2>
+
+    <div class="strategy-grid">
+      <div class="strategy-card">
+        <span class="phase-tag">Phase 1 — Apr 2026</span>
+        <h3>Awareness Blitz</h3>
+        <p>Build top-of-funnel visibility across Maharashtra's SSC/HSC student base before 12th board exams conclude.
+          Focus on brand recall.</p>
+        <ul class="tactic-list">
+          <li>Instagram Reels campaign — "Life at ADCET" campus stories</li>
+          <li>Pre-roll ads targeting 17–19 age group in Sangli, Kolhapur, Satara</li>
+          <li>WhatsApp bulk broadcast to 10th/12th student databases </li>
+          <li>Strategic Awareness Program by using traditional and digital methods </li>
+        </ul>
+      </div>
+
+      <div class="strategy-card">
+        <span class="phase-tag">Phase 2 — May 2026</span>
+        <h3>Interest & Lead Gen</h3>
+        <p>Capture students actively researching colleges after boards. Drive enquiry form fills and WhatsApp opt-ins
+          during peak decision research.</p>
+        <ul class="tactic-list">
+          <li>Facebook & Instagram Lead Ads with "Free Counselling Session" hook</li>
+          <li>Program-specific landing pages (AI&DS, Aeronautical, Robotics, CSE)</li>
+          <li>Graphic design creatives — placement stats, NAAC badge, department highlights</li>
+          <li>Reelography content: lab tours, alumni success stories, placement announcements</li>
+        </ul>
+      </div>
+
+      <div class="strategy-card">
+        <span class="phase-tag">Phase 3 — Jun to Jul 2026</span>
+        <h3>Conversion & Nurturing</h3>
+        <p>Convert leads into confirmed admissions. Engage parents and students through targeted communication during
+          DTE counselling season.</p>
+        <ul class="tactic-list">
+          <li>WhatsApp drip campaign — fee structure, scholarship info, hostel details</li>
+          <li>Retargeting ads for website visitors and enquiry form submitters</li>
+          <li>Parent-focused Facebook posts — safety, hostel, infrastructure messaging</li>
+          <li>Open house / virtual campus tour promotion via social media</li>
+          <li>Testimonial Reels from current students and alumni</li>
+        </ul>
+      </div>
+
+      <div class="strategy-card">
+        <span class="phase-tag">Phase 4 — Aug to Sep 2026</span>
+        <h3>Retention & Referral</h3>
+        <p>Fill Institute-Level seats after CAP rounds. Activate alumni and student referral networks to complete
+          admissions for AY 2026–27.</p>
+        <ul class="tactic-list">
+          <li>Direct Admission promotional content for institute-level seats</li>
+          <li>Alumni referral campaign with social media amplification</li>
+          <li>Freshers' week content — excitement posts to attract fence-sitters</li>
+          <li>Local newspaper digital supplements in Sangli district (Web-Portal)</li>
+          <li>Performance review and remarketing optimisation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES BY DISPLAY PROMOTION -->
+  <section class="services-section" id="services">
+    <div class="section-label">Powered by Display Promotion</div>
+    <h2 class="section-title">Services Deployed<br>for ADCET</h2>
+
+    <div class="services-row">
+      <div class="service-pill">
+        <div class="service-icon-wrap">📱</div>
+        <div class="service-info">
+          <h4>Social Media Marketing</h4>
+          <p>Instagram, Facebook & YouTube campaigns targeted at 17–22 year old students in Western Maharashtra.</p>
+        </div>
+      </div>
+      <div class="service-pill">
+        <div class="service-icon-wrap">💬</div>
+        <div class="service-info">
+          <h4>WhatsApp Promotion</h4>
+          <p>Bulk broadcasts, drip sequences and interactive chatbot flows for students and parents.</p>
+        </div>
+      </div>
+      <div class="service-pill">
+        <div class="service-icon-wrap">🎬</div>
+        <div class="service-info">
+          <h4>Reelography</h4>
+          <p>Short-form video production — campus tours, faculty intros, student testimonials and placement
+            celebrations.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-row">
+      <div class="service-pill">
+        <div class="service-icon-wrap">🎨</div>
+        <div class="service-info">
+          <h4>Graphics Design</h4>
+          <p>Admission creatives, NAAC highlight posts, program brochures, banners and social media templates.</p>
+        </div>
+      </div>
+      <div class="service-pill">
+        <div class="service-icon-wrap">✍️</div>
+        <div class="service-info">
+          <h4>Content Creation</h4>
+          <p>SEO-optimised blog posts, captions in Marathi & English, ad copy and email/WhatsApp message writing.</p>
+        </div>
+      </div>
+      <div class="service-pill">
+        <div class="service-icon-wrap">🌐</div>
+        <div class="service-info">
+          <h4>Website & Landing Pages</h4>
+          <p>High-converting admission enquiry landing pages with fast load times and mobile-first design.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-row" style="grid-template-columns: 1fr 1fr; max-width: 680px;">
+      <div class="service-pill">
+        <div class="service-icon-wrap">🔍</div>
+        <div class="service-info">
+          <h4>SEO</h4>
+          <p>Search Engine Optimization + Blog posts
+          </p>
+        </div>
+      </div>
+      <div class="service-pill">
+        <div class="service-icon-wrap">📊</div>
+        <div class="service-info">
+          <h4>Analytics & Reporting</h4>
+          <p>Monthly performance dashboards with lead count, CPL, reach and conversion tracking for ADCET management.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section" id="timeline">
+    <div class="section-label">Execution Roadmap</div>
+    <h2 class="section-title">Monthly Campaign<br>Timeline</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-month">April 2026</div>
+        <div class="timeline-content">
+          <h3>Campaign Setup & Brand Foundation</h3>
+          <p>Kickoff meeting between ADCET Admission Cell and Display Promotion team. Social media profile optimisation,
+            landing page development, content calendar creation, WhatsApp broadcast list setup, and creative toolkit
+            design (NAAC A++ badge assets, program highlights).</p>
+          <div class="tags">
+            <span class="tag">Strategy</span>
+            <span class="tag">Branding</span>
+            <span class="tag">Page Setup</span>
+            <span class="tag">Creative Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-month">April 2026</div>
+        <div class="timeline-content">
+          <h3>Awareness Launch — Pre-Board Season</h3>
+          <p>Go live with Instagram Reels and Facebook page posts. Launch YouTube pre-roll ads. First WhatsApp bulk
+            broadcast to regional student databases. Google Display Ads go live on engineering prep sites. Targeting
+            Sangli, Kolhapur, Satara, Miraj, Solapur districts.</p>
+          <div class="tags">
+            <span class="tag">Instagram Reels</span>
+            <span class="tag">YouTube Ads</span>
+            <span class="tag">WhatsApp Broadcast</span>
+            <span class="tag">Google Display</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-month">May 2026</div>
+        <div class="timeline-content">
+          <h3>Lead Generation Drive — Post-Board Peak</h3>
+          <p>Activate Facebook & Instagram Lead Ads with "Book Free Counselling" CTA. Launch program-specific Google
+            Search Ads. Reelography shoots — lab tours, faculty interviews, placement videos. Weekly content posting
+            (3–5 posts/week per platform). Target: 500+ enquiry form fills.</p>
+          <div class="tags">
+            <span class="tag">Lead Ads</span>
+            <span class="tag">Search Ads</span>
+            <span class="tag">Video Production</span>
+            <span class="tag">Enquiry Forms</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-month">June – July 2026</div>
+        <div class="timeline-content">
+          <h3>Conversion Season — DTE Counselling Period</h3>
+          <p>WhatsApp drip nurturing to all captured leads (3-stage sequence: info → comparison → CTA). Retargeting
+            campaigns for website visitors. Parent-specific messaging on fee structure, scholarships, hostel facilities.
+            Open House event digital promotion. ADCET Hackathon Season coverage amplification.</p>
+          <div class="tags">
+            <span class="tag">WhatsApp Drip</span>
+            <span class="tag">Retargeting</span>
+            <span class="tag">Parent Campaigns</span>
+            <span class="tag">Event Promotion</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-month">August – September 2026</div>
+        <div class="timeline-content">
+          <h3>Institute-Level Seat Fill & Alumni Activation</h3>
+          <p>Push Institute-Level and DSE direct admission promotions for remaining seats. Activate alumni referral
+            campaign across LinkedIn, WhatsApp and Instagram. Freshers welcome content to create social buzz. Campaign
+            performance report and planning for AY 2027–28.</p>
+          <div class="tags">
+            <span class="tag">Direct Admission</span>
+            <span class="tag">Alumni Network</span>
+            <span class="tag">Freshers Content</span>
+            <span class="tag">Performance Review</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARGET CHANNELS TABLE -->
+  <section class="channels-section" id="channels">
+    <div class="section-label">Channel Strategy</div>
+    <h2 class="section-title" style="color:var(--adcet-navy);">Target Channels<br>& Audience Mapping</h2>
+
+    <table class="channel-table">
+      <thead>
+        <tr>
+          <th>Channel</th>
+          <th>Primary Audience</th>
+          <th>Goal</th>
+          <th>Priority</th>
+          <th>Display Promotion Service</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Instagram / Reels</td>
+          <td>Students aged 16–20, aspirants</td>
+          <td>Awareness, Brand recall</td>
+          <td><span class="priority-badge priority-high">High</span></td>
+          <td>Reelography + Social Media Marketing</td>
+        </tr>
+        <tr>
+          <td>Facebook Ads</td>
+          <td>Parents aged 38–55, students</td>
+          <td>Lead generation, Parent trust</td>
+          <td><span class="priority-badge priority-high">High</span></td>
+          <td>Social Media Marketing + Lead Ads</td>
+        </tr>
+        <tr>
+          <td>WhatsApp Broadcast</td>
+          <td>HSC/JEE students, counsellors</td>
+          <td>Direct engagement, Conversion</td>
+          <td><span class="priority-badge priority-high">High</span></td>
+          <td>WhatsApp Promotion</td>
+        </tr>
+        <tr>
+          <td>Google Search Ads</td>
+          <td>Active college seekers</td>
+          <td>High-intent lead capture</td>
+          <td><span class="priority-badge priority-high">High</span></td>
+          <td>Digital Marketing / SEM</td>
+        </tr>
+        <tr>
+          <td>Landing Pages</td>
+          <td>All digital traffic</td>
+          <td>Enquiry form submissions</td>
+          <td><span class="priority-badge priority-high">High</span></td>
+          <td>Website Design & Development</td>
+        </tr>
+        <tr>
+          <td>LinkedIn</td>
+          <td>Alumni, recruiters, educators</td>
+          <td>Placement visibility, Alumni referrals</td>
+          <td><span class="priority-badge priority-mid">Medium</span></td>
+          <td>Content Creation + Graphics</td>
+        </tr>
+        <tr>
+          <td>Local Digital News</td>
+          <td>Sangli / Kolhapur region</td>
+          <td>Regional credibility</td>
+          <td><span class="priority-badge priority-low">Supportive</span></td>
+          <td>Content Creation + Graphics</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- KPIs -->
+  <section class="kpi-section" id="kpi">
+    <div class="section-label">Success Metrics</div>
+    <h2 class="section-title">Key Performance<br>Indicators</h2>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-num">300+</div>
+        <div class="kpi-metric">Qualified Enquiries</div>
+        <div class="kpi-desc">Total lead form submissions from prospective students across all digital channels</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">5L+</div>
+        <div class="kpi-metric">Total Reach</div>
+        <div class="kpi-desc">Unique users reached across Instagram, Facebook, Google and YouTube in target districts
+        </div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">15K+</div>
+        <div class="kpi-metric">WhatsApp Connects</div>
+        <div class="kpi-desc">Students and parents engaged through broadcast campaigns and drip sequences</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">30%+</div>
+        <div class="kpi-metric">Enquiry-to-Visit Rate</div>
+        <div class="kpi-desc">Percentage of enquiry leads who attend open house, campus visit or counselling session
+        </div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">₹150</div>
+        <div class="kpi-metric">Target CPL</div>
+        <div class="kpi-desc">Cost per qualified lead — benchmarked against Display Promotion's avg. 320% ROI standard
+        </div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">100%</div>
+        <div class="kpi-metric">Seat Fill Goal</div>
+        <div class="kpi-desc">Institute-level and management quota seats fully filled before October 2026 deadline</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUDGET ALLOCATION -->
+  <!-- <section class="budget-section" id="budget">
+    <div class="section-label">Investment Allocation</div>
+    <h2 class="section-title">Suggested Budget<br>Split (8-Month Plan)</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; flex-wrap:wrap;">
+      <div class="budget-bars">
+        <div class="budget-row">
+          <div class="budget-label-row">
+            <span>Paid Ads (Meta + Google + YouTube)</span>
+            <span>38%</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:38%;animation-delay:0.1s"></div>
+          </div>
+        </div>
+        <div class="budget-row">
+          <div class="budget-label-row">
+            <span>WhatsApp Promotion & Drip Campaigns</span>
+            <span>18%</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:18%;animation-delay:0.2s"></div>
+          </div>
+        </div>
+        <div class="budget-row">
+          <div class="budget-label-row">
+            <span>Content Creation & Copywriting</span>
+            <span>15%</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:15%;animation-delay:0.3s"></div>
+          </div>
+        </div>
+        <div class="budget-row">
+          <div class="budget-label-row">
+            <span>Reelography / Video Production</span>
+            <span>14%</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:14%;animation-delay:0.4s"></div>
+          </div>
+        </div>
+        <div class="budget-row">
+          <div class="budget-label-row">
+            <span>Graphics Design & Creatives</span>
+            <span>9%</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:9%;animation-delay:0.5s"></div>
+          </div>
+        </div>
+        <div class="budget-row">
+          <div class="budget-label-row">
+            <span>Landing Page & Web Development</span>
+            <span>6%</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:6%;animation-delay:0.6s"></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div
+          style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px;">
+          <div
+            style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--adcet-gold);margin-bottom:20px;">
+            Plan Summary</div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div
+              style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:14px;">
+              <span style="font-size:13px;color:rgba(255,255,255,0.6);">Plan Duration</span>
+              <span style="font-size:13px;font-weight:600;">Jan – Sep 2026 (9 months)</span>
+            </div>
+            <div
+              style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:14px;">
+              <span style="font-size:13px;color:rgba(255,255,255,0.6);">Target Districts</span>
+              <span style="font-size:13px;font-weight:600;">Sangli, Kolhapur, Satara,<br>Solapur, Miraj, Belgaum</span>
+            </div>
+            <div
+              style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:14px;">
+              <span style="font-size:13px;color:rgba(255,255,255,0.6);">Language Targeting</span>
+              <span style="font-size:13px;font-weight:600;">Marathi + English (bilingual)</span>
+            </div>
+            <div
+              style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:14px;">
+              <span style="font-size:13px;color:rgba(255,255,255,0.6);">Reporting Frequency</span>
+              <span style="font-size:13px;font-weight:600;">Monthly Dashboard + Review Call</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;">
+              <span style="font-size:13px;color:rgba(255,255,255,0.6);">Expected ROI</span>
+              <span style="font-size:15px;font-weight:700;color:var(--adcet-gold);">250–320%</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="margin-top:20px;background:rgba(232,160,32,0.06);border:1px solid rgba(232,160,32,0.2);border-radius:12px;padding:20px 24px;">
+          <div style="font-size:12px;color:var(--adcet-gold);font-weight:600;margin-bottom:8px;">💡 Display Promotion
+            Advantage</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6;">Already trusted by Sakal Vidya Expo,
+            Baramati Sports Foundation & Samarth Business Group — Display Promotion brings proven Maharashtra-region
+            expertise and local-language campaign intelligence to ADCET's admission drive.</div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready to Fill Every Seat?</h2>
+    <p>Let's turn ADCET's NAAC A++ strength and Display Promotion's digital expertise into Maharashtra's most successful
+      engineering admission campaign of 2026.</p>
+    <div class="cta-buttons">
+      <a href="https://www.displaypromotion.in/#contact" target="_blank" class="btn-primary">📩 Contact Display
+        Promotion</a>
+      <a href="https://www.adcet.ac.in/admission-cell" target="_blank" class="btn-secondary">🎓 ADCET Admission Cell</a>
+    </div>
+  </section>
+  <!-- Design Gallery -->
+  <section class="gallery-section" id="gallery">
+    <div class="section-label">Creative Showcase</div>
+    <h2 class="section-title">Design &amp; Motion<br>Gallery</h2>
+
+    <div class="gallery-tabs">
+      <button class="gallery-tab active" data-filter="graphic">Graphics</button>
+      <button class="gallery-tab" data-filter="video">Motion</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Graphic Designs -->
+      <div class="gallery-item" data-type="graphic" data-index="0" onclick="openLightbox(0)">
+        <img src="gd1.jpeg" alt="ADCET Motivational Creative — Bacha Hai Tu Mera" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span>🎨 Motivational Campaign</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-type="graphic" data-index="1" onclick="openLightbox(1)">
+        <img src="gd4.jpeg" alt="ADCET Admission Creative — Limited Seats" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span>🎨 Admission Campaign</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-type="video" data-index="2" onclick="openLightbox(2)">
+        <video src="mg1.mp4" muted preload="metadata"></video>
+        <div class="play-badge"></div>
+        <div class="gallery-item-overlay">
+          <span>🎬 Motion Graphic</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-type="graphic" data-index="3" onclick="openLightbox(3)">
+        <img src="gd2.jpeg" alt="ADCET Akshay Tritiya Festival Post" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span>🎨 Festival Creative</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-type="graphic" data-index="4" onclick="openLightbox(4)">
+        <img src="gd3.jpeg" alt="ADCET World Book Day Creative" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span>🎨 Awareness Post</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-type="video" data-index="5" onclick="openLightbox(5)">
+        <video src="mg2.mp4" muted preload="metadata"></video>
+        <div class="play-badge"></div>
+        <div class="gallery-item-overlay">
+          <span>🎬 Motion Graphic</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-type="graphic" data-index="6" onclick="openLightbox(6)">
+        <img src="gd5.jpeg" alt="ADCET Recruitment Campaign — We're Looking For You" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span>🎨 Recruitment Campaign</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="gallery-lightbox" id="galleryLightbox">
+    <div style="position:relative;">
+      <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">‹</button>
+
+      <div class="gallery-lightbox-content" id="lightboxContent"></div>
+
+      <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">›</button>
+      <div class="gallery-counter" id="lightboxCounter"></div>
+    </div>
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  </div>
+
+  <script>
+    // Gallery data
+    const galleryItems = [
+      { type: 'graphic', src: 'gd1.jpeg' },
+      { type: 'graphic', src: 'gd4.jpeg' },
+      { type: 'video', src: 'mg1.mp4' },
+      { type: 'graphic', src: 'gd2.jpeg' },
+      { type: 'graphic', src: 'gd3.jpeg' },
+      { type: 'video', src: 'mg2.mp4' },
+      { type: 'graphic', src: 'gd5.jpeg' }
+    ];
+
+    let currentIndex = 0;
+    let visibleIndices = [];
+
+    function applyFilter(filter) {
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        if (item.dataset.type === filter) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      visibleIndices = [];
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        if (item.style.display !== 'none') {
+          visibleIndices.push(parseInt(item.dataset.index));
+        }
+      });
+    }
+
+    // Apply default filter on load
+    applyFilter('graphic');
+
+    // Tab filtering
+    document.querySelectorAll('.gallery-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        applyFilter(tab.dataset.filter);
+      });
+    });
+
+    // Lightbox
+    function openLightbox(index) {
+      currentIndex = index;
+      renderLightbox();
+      document.getElementById('galleryLightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('galleryLightbox').classList.remove('active');
+      document.body.style.overflow = '';
+
+      // Pause any playing videos
+      const vid = document.querySelector('#lightboxContent video');
+      if (vid) vid.pause();
+    }
+
+    function navigateLightbox(dir) {
+      const pos = visibleIndices.indexOf(currentIndex);
+      let newPos = pos + dir;
+      if (newPos < 0) newPos = visibleIndices.length - 1;
+      if (newPos >= visibleIndices.length) newPos = 0;
+      currentIndex = visibleIndices[newPos];
+
+      // Pause previous video
+      const vid = document.querySelector('#lightboxContent video');
+      if (vid) vid.pause();
+
+      renderLightbox();
+    }
+
+    function renderLightbox() {
+      const item = galleryItems[currentIndex];
+      const container = document.getElementById('lightboxContent');
+      const pos = visibleIndices.indexOf(currentIndex);
+
+      if (item.type === 'graphic') {
+        container.innerHTML = `<img src="${item.src}" alt="Gallery image">`;
+      } else {
+        container.innerHTML = `<video src="${item.src}" controls autoplay style="background:#000;"></video>`;
+      }
+
+      document.getElementById('lightboxCounter').textContent =
+        `${pos + 1} / ${visibleIndices.length}`;
+    }
+
+    // Close on backdrop click
+    document.getElementById('galleryLightbox').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('galleryLightbox')) closeLightbox();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!document.getElementById('galleryLightbox').classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigateLightbox(-1);
+      if (e.key === 'ArrowRight') navigateLightbox(1);
+    });
+  </script>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">ADCET + Display Promotion — Admission Plan 2026</div>
+    <div class="footer-links">
+      <a href="https://www.adcet.ac.in" target="_blank">www.adcet.ac.in</a>
+      <a href="https://www.displaypromotion.in" target="_blank">www.displaypromotion.in</a>
+      <a href="tel:+919689433293">Display Promotion: +91 9689433293</a>
+    </div>
+    <div class="footer-copy">Prepared March 2026 · Confidential Marketing Proposal
+      <div>
+        &#xA9;All Rights Reserved by Display Promotion
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
